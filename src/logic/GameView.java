@@ -1,4 +1,4 @@
-package view;
+package logic;
 
 public interface GameView {
 

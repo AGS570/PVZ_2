@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import logic.GameModel;
-import view.GameView;
+import logic.GameView;
 
 public abstract class Command{
 

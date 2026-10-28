@@ -8,6 +8,7 @@ import static utils.StringUtils.*;
 import logic.Game;
 import logic.GameWorld;
 import logic.GameStatus;
+import logic.GameView;
 import logic.Position;
 import utils.StringUtils;
 

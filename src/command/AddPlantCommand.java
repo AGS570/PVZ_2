@@ -1,7 +1,7 @@
 package command;
 
 import logic.GameModel;
-import view.GameView;
+import logic.GameView;
 import view.Messages;
 
 public class AddPlantCommand extends Command{

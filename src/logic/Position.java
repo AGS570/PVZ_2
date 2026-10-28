@@ -26,5 +26,15 @@ public class Position {
     	if(this.fil < r && this.fil >= 0 && this.col < c && this.col >=0) return true;
     	return false;
     }
+
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean inBoard() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
