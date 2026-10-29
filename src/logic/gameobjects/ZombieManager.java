@@ -10,6 +10,7 @@ logic;
 import java.util.Random;
 
 import control.Level;
+import logic.Game;
 import logic.GameModel;
 import logic.Position;
 import logic.gameobjects.Zombie;
@@ -33,7 +34,6 @@ public class ZombieManager {
 
 	private int remainingZombies;
 
-	private ZombieList zombies;
 
 	public ZombieManager(GameModel game, Level level, Random rand) {
 		this.game = game;
@@ -58,7 +58,7 @@ public class ZombieManager {
 	 * @return a random row.
 	 */
 	private int randomZombieRow() {
-		return rand.nextInt(Game.NUM_ROWS);
+		return rand.nextInt(GameWorld.NUM_ROWS);
 	}
 	
 	public boolean addZombie() {
