@@ -19,6 +19,6 @@ public class PeaShooter extends Plant{
 
 	private void shoot() {
 		// TODO Auto-generated method stub
-		
+		this.game.shoot();
 	}
 }
