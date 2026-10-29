@@ -18,6 +18,21 @@ public class GameObjectContainer {
 		for(GameObject go: gameObjects) {
 			go.update();
 		}
+		clean();
+	  }
+	  
+	  private void clean() {
+		// TODO Auto-generated method stub
+		  for(GameObject go: gameObjects) {
+			  
+				if(!go.isAlive()) {
+					this.gameObjects.remove(go);
+				}
+			}
+	  }
+	  
+	  public void addObject(GameObject obj) {
+		  this.gameObjects.add(obj);
 	  }
 	  
 	  

@@ -8,10 +8,12 @@ public abstract class GameObject implements GameItem {
 	  protected GameWorld game;
 	  protected Position position;
 	  protected int health;
+	  protected boolean isAlive;
 	  
 	  GameObject(GameWorld game, Position p) {
 	    this.game = game;
 	    this.position = p;
+	    this.isAlive = true;
 	  }
 
 	  public boolean isInPosition(Position other) {
@@ -25,10 +27,7 @@ public abstract class GameObject implements GameItem {
 	  abstract public String getDescription();
 
 	  public boolean isAlive() {
-		  if(health <= 0 ) {
-			  return false;
-		  }
-		  return true;
+		  return this.isAlive;
 	  };
 
 	  abstract public void update();
@@ -38,5 +37,12 @@ public abstract class GameObject implements GameItem {
 
 	  abstract public void onExit();
 
-	  // ...
+	  public void checkHealth() {
+		  if(this.health <= 0) this.death();
+	  }
+
+	  private void death() {
+		// TODO Auto-generated method stub
+		this.isAlive = false;
+	  }
 	}

@@ -54,7 +54,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  public boolean isInsideBoard(Position position) {
 		// TODO Auto-generated method stub
 		return position.inBoard();
-	  }
+	  }		
 
 	  @Override
 	  public int getCycles() {
