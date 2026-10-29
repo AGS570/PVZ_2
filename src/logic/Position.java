@@ -2,20 +2,20 @@ package logic;
 
 public class Position {
 
-	private int fil;
+	private int row;
 	private int col;
 	public Position(int row, int col) {
 		// TODO Auto-generated constructor stub
-		this.fil = row;
+		this.row = row;
 		this.col= col;
 	}
 	
 	public String toString() {
-		return fil + " " + col;
+		return row + " " + col;
 	}
 
 	public int getRow() {
-        return fil;
+        return row;
     }
 
     public int getCol() {
@@ -23,7 +23,7 @@ public class Position {
     }
  
     public boolean isValid(int r, int c) {
-    	if(this.fil < r && this.fil >= 0 && this.col < c && this.col >=0) return true;
+    	if(this.row < r && this.row >= 0 && this.col < c && this.col >=0) return true;
     	return false;
     }
 
@@ -37,4 +37,10 @@ public class Position {
 		return false;
 	}
 	
+	public Position newPosition() {
+		int col = this.col-1;
+		int row = this.row;
+		
+		return new Position(row,col);
+	}
 }

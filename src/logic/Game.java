@@ -77,4 +77,10 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		return null;
 	  }
+
+	  @Override
+	  public void shoot() {
+		// TODO Auto-generated method stub
+		
+	  }
 }

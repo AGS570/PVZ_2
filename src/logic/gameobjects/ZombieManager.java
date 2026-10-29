@@ -11,6 +11,7 @@ import java.util.Random;
 
 import control.Level;
 import logic.GameModel;
+import logic.Position;
 import logic.gameobjects.Zombie;
 
 /**
