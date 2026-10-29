@@ -40,5 +40,13 @@ public class Plant extends GameObject{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public boolean receiveInteraction(Zombie obj, int dmg) {
+		if(obj == null) return false;
+		else {
+			this.health -= dmg;
+			return true;
+		}
+	}
 
 }

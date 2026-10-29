@@ -43,4 +43,12 @@ public class Position {
 		
 		return new Position(row,col);
 	}
+	
+	public boolean isInPosition(Position np) {
+		return this.equals(np);
+	}
+	
+	private boolean equals(Position np) {
+		return this.row  == np.row && this.col == np.col;
+	}
 }

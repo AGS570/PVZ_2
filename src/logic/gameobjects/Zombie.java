@@ -37,15 +37,19 @@ public class Zombie extends GameObject{
 		}
 	}
 	
-	private void attack(Position np) {
+	private boolean attack(Position np, GameItem other) {
+		
 		// TODO Auto-generated method stub
-		this.zmn.attack(np, dmg);
+		if(other.isInPosition(np))
+		return other.receiveInteraction(this,this.dmg);
 	}
+	
 	@Override
 	public void onEnter() {
 		// TODO Auto-generated method stub
 		
 	}
+	
 	@Override
 	public void onExit() {
 		// TODO Auto-generated method stub

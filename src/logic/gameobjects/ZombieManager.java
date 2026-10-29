@@ -131,8 +131,8 @@ public class ZombieManager {
 		return this.game.isPositionEmpty(nextPos);
 	}
 
-	public void finishGame(boolean b) {
+	public void finishGame(boolean b, GameModel game) {
 		// TODO Auto-generated method stub
-		this.game.finishGame(b);
+		game.finishGame(b);
 	}
 }

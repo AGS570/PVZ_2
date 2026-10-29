@@ -45,4 +45,14 @@ public abstract class GameObject implements GameItem {
 		// TODO Auto-generated method stub
 		this.isAlive = false;
 	  }
-	}
+	  
+	  public boolean receiveInteraction(Zombie obj,int dmf) {
+		  return false;
+	  }
+	  
+	  public boolean receiveInteraction(PeaShooter obj, int dmg) {
+		  return false;
+	  }
+	  
+	  
+}
