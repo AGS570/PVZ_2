@@ -12,6 +12,7 @@ public interface GameWorld {
 	  void getSun(int suns);
 	  void shoot();
 	  void receiveAttack(Zombie obj);
+	  void doAttack(Zombie zombie);
 
 	  // ...
 	}

@@ -86,7 +86,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		
 	  }
 
-	  
+	  @Override
 	  public void doAttack(GameItem obj) {
 		// TODO Auto-generated method stub
 		this.ObjectContainer.doAttack(obj);

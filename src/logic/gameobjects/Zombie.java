@@ -32,21 +32,14 @@ public class Zombie extends GameObject{
 		if(this.isAlive) {
 			Position np = this.position.newPosition();
 			if(!move(np)) {
-				this.game.receiveAttack(this);
+				this.game.doAttack(this);
 			}
 		}
 	}
 	
-	private boolean doAttack(Position np, GameItem other) {
-		
-		// TODO Auto-generated method stub
-		if(other.isInPosition(np))
-		return other.receiveInteraction(this,this.dmg);
-		return false;
-	}
 	
-	
-	private boolean attack(GameItem other) {
+	@Override
+	public boolean attack(GameItem other) {
 		Position np = this.position.newPosition();
 		if (other.isInPosition(np)) {
 			other.receiveAttack(this);
@@ -72,6 +65,16 @@ public class Zombie extends GameObject{
 			this.position = np;
 			return true;
 		}else return false;
+	}
+	@Override
+	public boolean attack(GameObject o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean receiveAttack(Zombie obj) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	
