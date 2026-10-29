@@ -1,5 +1,7 @@
 package logic;
 
+import logic.gameobjects.GameItem;
+import logic.gameobjects.Zombie;
 
 public class Game implements GameStatus, GameWorld, GameModel {
 
@@ -80,6 +82,18 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 	  @Override
 	  public void shoot() {
+		// TODO Auto-generated method stub
+		
+	  }
+
+	  
+	  public void doAttack(GameItem obj) {
+		// TODO Auto-generated method stub
+		this.ObjectContainer.doAttack(obj);
+	  }
+
+	  @Override
+	  public void receiveAttack(Zombie obj) {
 		// TODO Auto-generated method stub
 		
 	  }

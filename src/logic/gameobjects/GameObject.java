@@ -54,5 +54,13 @@ public abstract class GameObject implements GameItem {
 		  return false;
 	  }
 	  
+	  public void receiveAttack(GameItem other) {
+		if()  
+	  }
+	  
+	  
+	  
+	  
+	  
 	  
 }

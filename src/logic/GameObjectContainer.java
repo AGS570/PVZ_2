@@ -3,6 +3,7 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
 import logic.gameobjects.ZombieManager;
 
@@ -33,6 +34,12 @@ public class GameObjectContainer {
 	  
 	  public void addObject(GameObject obj) {
 		  this.gameObjects.add(obj);
+	  }
+	  public void doAttack(GameItem obj) {
+		// TODO Auto-generated method stub
+		for(GameObject o: this.gameObjects) {
+			obj.attack(o);
+		}
 	  }
 	  
 	  

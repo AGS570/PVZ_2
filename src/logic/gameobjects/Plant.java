@@ -41,12 +41,19 @@ public class Plant extends GameObject{
 		
 	}
 	
-	public boolean receiveInteraction(Zombie obj, int dmg) {
+	public boolean receiveAttack(Zombie obj) {
 		if(obj == null) return false;
 		else {
-			this.health -= dmg;
+			this.health -= 1; 
+			this.checkHealth();
 			return true;
 		}
+	}
+
+	@Override
+	public boolean attack(GameObject o) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

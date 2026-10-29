@@ -1,5 +1,7 @@
 package logic;
 
+import logic.gameobjects.Zombie;
+
 public interface GameWorld {
 
 	  public static final int NUM_ROWS = 4;
@@ -9,6 +11,7 @@ public interface GameWorld {
 	  boolean isInsideBoard(Position position);
 	  void getSun(int suns);
 	  void shoot();
+	  void receiveAttack(Zombie obj);
 
 	  // ...
 	}
