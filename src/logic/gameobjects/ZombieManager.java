@@ -40,7 +40,6 @@ public class ZombieManager {
 		this.level = level;
 		this.rand = rand;
 		this.remainingZombies = level.getNumberOfZombies();
-		this.zombies = new ZombieList();
 	}
 
 	/**
@@ -102,34 +101,13 @@ public class ZombieManager {
 		return this.remainingZombies;
 	}
 
-	public String PositionToString(Position pos) {
-		return this.zombies.PositionToString(pos);
-	}
-
-	public void receiveInteraction(Position Pos, int damage) {
-		// TODO Auto-generated method stub
-		this.zombies.receiveInteraction(Pos,damage);
-	}
 	
 	// TODO fill your code
 	public boolean zombiesRemain() {
-		return (this.remainingZombies == 0 && this.zombies.isEmpty());
+		return (this.remainingZombies == 0);
 	}
 
-	public boolean plantsAhead(Position nextPos) {
-		// TODO Auto-generated method stub
-		return this.game.plantsAhead(nextPos);
-	}
 
-	public void attack(Position nextPos, int damage) {
-		// TODO Auto-generated method stub
-		this.game.attack(nextPos, damage);
-	}
-
-	public boolean isPositionEmpty(Position nextPos) {
-		// TODO Auto-generated method stub
-		return this.game.isPositionEmpty(nextPos);
-	}
 
 	public void finishGame(boolean b, GameModel game) {
 		// TODO Auto-generated method stub

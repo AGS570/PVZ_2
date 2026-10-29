@@ -66,11 +66,7 @@ public class Zombie extends GameObject{
 			return true;
 		}else return false;
 	}
-	@Override
-	public boolean attack(GameObject o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 	@Override
 	public boolean receiveAttack(Zombie obj) {
 		// TODO Auto-generated method stub

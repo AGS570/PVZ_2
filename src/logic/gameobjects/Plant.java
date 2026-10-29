@@ -51,9 +51,11 @@ public class Plant extends GameObject{
 	}
 
 	@Override
-	public boolean attack(GameObject o) {
+	public boolean attack(GameItem other) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 }

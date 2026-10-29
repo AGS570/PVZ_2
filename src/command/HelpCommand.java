@@ -29,6 +29,21 @@ public class HelpCommand extends Command {
 	@Override
 	public void execute(GameModel game, GameView view) {
 		// TODO Auto-generated method stub
-		game.help();
+		view.showMessage(Messages.he);
 	}
+	
+	public static String commandHelp() {
+		StringBuilder commands = new StringBuilder();
+		
+		commands.append(Messages.HELP_AVAILABLE_COMMANDS).append(Messages.LINE_SEPARATOR);
+		
+		for (Command c: availableCommands) {
+			commands.append(c.helpText());
+		}
+		
+		return commands.toString();
+		
+		String s;
+	}
+	
 	}

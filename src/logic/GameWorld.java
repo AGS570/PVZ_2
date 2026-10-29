@@ -1,5 +1,6 @@
 package logic;
 
+import logic.gameobjects.GameItem;
 import logic.gameobjects.Zombie;
 
 public interface GameWorld {
@@ -12,7 +13,7 @@ public interface GameWorld {
 	  void getSun(int suns);
 	  void shoot();
 	  void receiveAttack(Zombie obj);
-	  void doAttack(Zombie zombie);
+	  void doAttack(GameItem obj);
 
 	  // ...
 	}
