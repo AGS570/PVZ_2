@@ -13,6 +13,12 @@ public class GameObjectContainer {
 	  public GameObjectContainer() {
 	    gameObjects = new ArrayList<>();
 	  }
+	  public void update() {
+		// TODO Auto-generated method stub
+		for(GameObject go: gameObjects) {
+			go.update();
+		}
+	  }
 	  
 	  
 	//...

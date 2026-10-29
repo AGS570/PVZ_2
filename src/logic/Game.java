@@ -61,4 +61,20 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		return this.cycles;
 	  }
+	  
+	  public void update() {
+		  this.ObjectContainer.update();
+	  }
+
+	  @Override
+	  public void getSun(int suns) {
+		// TODO Auto-generated method stub
+		this.sunCoins += suns;
+	  }
+
+	  @Override
+	  public String positionToString(Position position) {
+		// TODO Auto-generated method stub
+		return null;
+	  }
 }

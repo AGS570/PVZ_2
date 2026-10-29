@@ -7,6 +7,7 @@ public interface GameWorld {
 
 	  boolean isEmpty(Position position);
 	  boolean isInsideBoard(Position position);
+	  void getSun(int suns);
 
 	  // ...
 	}

@@ -5,7 +5,7 @@ import logic.Position;
 
 public class Plant extends GameObject{
 	
-	private int coolDown = 3
+	private int coolDown = 3;
 	Plant(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
