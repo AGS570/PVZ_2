@@ -83,7 +83,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public void shoot() {
 		// TODO Auto-generated method stub
-		this.ObjectContainer.shoot()
+		//this.ObjectContainer.shoot();
 	  }
 
 	  @Override
@@ -93,6 +93,11 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  }
 
 	  
+	  @Override
+	  public void finishGame(boolean b) {
+		// TODO Auto-generated method stub
+		this.isGameFinished = true;
+	  }
 
 	  @Override
 	  public void addZombie(Zombie zombie) {
@@ -100,9 +105,5 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		this.ObjectContainer.addObject(zombie);
 	  }
 
-	  @Override
-	  public void finishGame(boolean b) {
-		// TODO Auto-generated method stub
-		this.isGameFinished = true;
-	  }
+	  
 }

@@ -27,7 +27,7 @@ import logic.gameobjects.Zombie;
  */
 public class ZombieManager {
 
-	private GameModel game;
+	private GameWorld game;
 
 	private Level level;
 
@@ -36,7 +36,7 @@ public class ZombieManager {
 	private int remainingZombies;
 
 
-	public ZombieManager(GameModel game, Level level, Random rand) {
+	public ZombieManager(GameWorld game, Level level, Random rand) {
 		this.game = game;
 		this.level = level;
 		this.rand = rand;
@@ -78,7 +78,7 @@ public class ZombieManager {
 			// TODO fill your code
 			this.remainingZombies--;
 			Position p = new Position( row,Game.NUM_COLS-1);
-			this.game.addZombie(p);
+			this.game.addZombie(new Zombie(game,p));
 		}
 		return canAdd;
 	}

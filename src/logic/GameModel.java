@@ -7,7 +7,6 @@ public interface GameModel {
 	public void help();
 	public void addPlant(String[] commandWords);
 	public void quit();
-	public void addZombie(Position p);
 	public void finishGame(boolean b);
 	
 }

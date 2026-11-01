@@ -41,6 +41,13 @@ public class Plant extends GameObject{
 		
 	}
 	
+
+	@Override
+	public boolean attack(GameItem other) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	public boolean receiveAttack(Zombie obj) {
 		if(obj == null) return false;
 		else {
@@ -49,13 +56,7 @@ public class Plant extends GameObject{
 			return true;
 		}
 	}
-
-	@Override
-	public boolean attack(GameItem other) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
 	@Override
 	public boolean receiveAttack(PeaShooter obj) {
 		// TODO Auto-generated method stub

@@ -10,6 +10,10 @@ public class PeaShooter extends Plant{
 		// TODO Auto-generated constructor stub
 	}
 
+	public PeaShooter() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override 
 	public void update() {
 		this.checkHealth();

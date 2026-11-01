@@ -13,6 +13,9 @@ public interface GameWorld {
 	  void getSun(int suns);
 	  void shoot();
 	  void doAttack(GameItem obj);
+	  void addZombie(Zombie zombie);
+	  Object addSunflower(Position position);
+	  Object addPeashooter(Position position);
 
 	  // ...
 	}

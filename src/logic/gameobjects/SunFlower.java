@@ -15,6 +15,10 @@ public class SunFlower extends Plant{
 		this.coolDown = 3;
 	}
 	
+	public SunFlower() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override 
 	public void update() {
 		if (this.coolDown <= 0) {
