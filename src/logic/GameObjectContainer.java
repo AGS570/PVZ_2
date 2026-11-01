@@ -35,11 +35,12 @@ public class GameObjectContainer {
 	  public void addObject(GameObject obj) {
 		  this.gameObjects.add(obj);
 	  }
-	  public void doAttack(GameItem obj) {
+	  public boolean doAttack(GameItem obj) {
 		// TODO Auto-generated method stub
 		for(GameObject o: this.gameObjects) {
-			obj.attack(o);
+			if(obj.attack(o))return true;
 		}
+		return false;
 	  }
 	  
 	  

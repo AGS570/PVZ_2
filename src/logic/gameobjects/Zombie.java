@@ -72,6 +72,15 @@ public class Zombie extends GameObject{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	@Override
+	public boolean receiveAttack(PeaShooter obj) {
+		if(obj == null) return false;
+		else {
+			this.health -= 1; 
+			this.checkHealth();
+			return true;
+		}
+	}
 	
 	
 

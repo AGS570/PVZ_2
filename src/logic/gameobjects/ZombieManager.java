@@ -12,6 +12,7 @@ import java.util.Random;
 import control.Level;
 import logic.Game;
 import logic.GameModel;
+import logic.GameWorld;
 import logic.Position;
 import logic.gameobjects.Zombie;
 
@@ -77,14 +78,12 @@ public class ZombieManager {
 			// TODO fill your code
 			this.remainingZombies--;
 			Position p = new Position( row,Game.NUM_COLS-1);
-			this.zombies.insert(new Zombie(p,this));
+			this.game.addZombie(p);
 		}
 		return canAdd;
 	}
 
-	public void update(){
-		this.zombies.update();
-	}
+	
 	
 	
 	
@@ -92,7 +91,8 @@ public class ZombieManager {
 
 	private boolean isPositionEmpty(int numCols, int row) {
 		// TODO Auto-generated method stub
-		return this.game.isPositionEmpty(new Position(row,numCols));
+		Position np = new Position(row, numCols);
+		return np.isEmpty();
 	}
 
 	// por hacer------------------------------------

@@ -20,6 +20,10 @@ public abstract class GameObject implements GameItem {
 	    return this.position.equals(other);
 	  }
 
+	  public boolean isInRow(Position other) {
+		    return this.position.isInRow(other);
+		  }
+	  
 	  public Position getPosition() { return this.position;}
 
 	  abstract public String getIcon();
@@ -55,7 +59,7 @@ public abstract class GameObject implements GameItem {
 	  }
 	  
 
-	  
+	
 	  
 	  
 	  

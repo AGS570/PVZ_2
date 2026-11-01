@@ -56,6 +56,12 @@ public class Plant extends GameObject{
 		return false;
 	}
 
+	@Override
+	public boolean receiveAttack(PeaShooter obj) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 
 }

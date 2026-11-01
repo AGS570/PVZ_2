@@ -12,7 +12,6 @@ public interface GameWorld {
 	  boolean isInsideBoard(Position position);
 	  void getSun(int suns);
 	  void shoot();
-	  void receiveAttack(Zombie obj);
 	  void doAttack(GameItem obj);
 
 	  // ...

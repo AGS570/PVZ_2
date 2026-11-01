@@ -14,12 +14,23 @@ public class PeaShooter extends Plant{
 	public void update() {
 		this.checkHealth();
 		if(this.isAlive)
-			this.shoot();
+			this.game.doAttack(this);
 	}
 
 	private void shoot() {
 		// TODO Auto-generated method stub
 		this.game.shoot();
 	}
+	
+	@Override
+	public boolean attack(GameItem other) {
+		// TODO Auto-generated method stub
+		if(other.isInRow(position)) {
+			return other.receiveAttack(this);
+			
+		}
+		return false;
+	}
+
 }
 
