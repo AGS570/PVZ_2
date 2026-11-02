@@ -38,6 +38,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.factory = new PlantFactory();
 			this.zombieManager = new ZombieManager(this,level,rand);
 			this.playerWins = false;
+			this.level = level;
 		}
 	  //...
 

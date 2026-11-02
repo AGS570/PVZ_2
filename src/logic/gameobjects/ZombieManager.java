@@ -93,7 +93,7 @@ public class ZombieManager {
 
 	private boolean isPositionEmpty(int numCols, int row) {
 		// TODO Auto-generated method stub
-		Position np = new Position(row, numCols);
+		Position np = new Position(row, numCols-1);
 		return game.isEmpty(np);
 	}
 
