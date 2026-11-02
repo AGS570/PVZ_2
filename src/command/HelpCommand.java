@@ -26,24 +26,21 @@ public class HelpCommand extends Command {
 			return new HelpCommand();
 		else return null;
 	}
+	
+	
 	@Override
 	public void execute(GameModel game, GameView view) {
-		// TODO Auto-generated method stub
-		view.showMessage(Messages.he);
-	}
-	
-	public static String commandHelp() {
-		StringBuilder commands = new StringBuilder();
-		
-		commands.append(Messages.HELP_AVAILABLE_COMMANDS).append(Messages.LINE_SEPARATOR);
-		
-		for (Command c: availableCommands) {
-			commands.append(c.helpText());
-		}
-		
-		return commands.toString();
-		
-		String s;
+
+	    StringBuilder result = new StringBuilder();
+
+	    for (Command command : AVAILABLE_COMMANDS) {
+	        result.append(command.getDetails())
+	              .append(": ")
+	              .append(command.getHelp())
+	              .append(Messages.LINE_SEPARATOR);
+	    }
+
+	    view.showMessage(result.toString());
 	}
 	
 	}

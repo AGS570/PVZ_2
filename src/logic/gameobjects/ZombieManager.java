@@ -1,6 +1,5 @@
 package logic.gameobjects;
 
-logic;
 
 
 

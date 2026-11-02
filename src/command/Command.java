@@ -8,7 +8,7 @@ import logic.GameView;
 
 public abstract class Command{
 
-	private static final List<Command> AVAILABLE_COMMANDS = Arrays.asList(
+	protected static final List<Command> AVAILABLE_COMMANDS = Arrays.asList(
 	      new AddPlantCommand(),
 	      new ListPlantsCommand(),
 	      new ResetCommand(),
@@ -36,6 +36,16 @@ public abstract class Command{
 	  public abstract Command create(String[] commandWords);
 
 	  public abstract void execute(GameModel game, GameView view);
+
+	  public Object getDetails() {
+		// TODO Auto-generated method stub
+		return details;
+	  }
+
+	  public Object getHelp() {
+		// TODO Auto-generated method stub
+		return help;
+	  }
 }
 
 

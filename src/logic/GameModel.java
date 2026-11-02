@@ -8,6 +8,8 @@ public interface GameModel {
 	public void addPlant(String[] commandWords);
 	public void quit();
 	public void finishGame(boolean b);
+	public boolean hasGameFinished();
+	public boolean playerQuits();
 
 	
 }

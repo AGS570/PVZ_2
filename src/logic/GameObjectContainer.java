@@ -22,7 +22,7 @@ public class GameObjectContainer {
 		clean();
 	  }
 	  
-	  private void clean() {
+	  /*private void clean() {
 		// TODO Auto-generated method stub
 		  for(GameObject go: gameObjects) {
 			  
@@ -30,7 +30,17 @@ public class GameObjectContainer {
 					this.gameObjects.remove(go);
 				}
 			}
-	  }
+	  }*/
+	  
+	  
+	  private void clean() {
+		    for (int i = 0; i < gameObjects.size(); i++) {
+		        if (!gameObjects.get(i).isAlive()) {
+		            gameObjects.remove(i);
+		            i--;
+		        }
+		    }
+		}
 	  
 	  public void addObject(GameObject obj) {
 		  this.gameObjects.add(obj);

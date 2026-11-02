@@ -1,14 +1,15 @@
 package control;
 
-package pvz.control;
+
 
 import command.Command;
 import logic.GameModel;
+import logic.GameStatus;
 import logic.GameWorld;
-import pvz.logic.Game;
-import pvz.view.GamePrinter;
-import pvz.view.GameView;
-import pvz.view.Messages;
+import logic.Game;
+import view.GamePrinter;
+import view.GameView;
+import view.Messages;
 
 /**
  * Input/output coordinator of the game (the C in MVC).
@@ -22,11 +23,13 @@ import pvz.view.Messages;
 public class Controller {
 
 	private final GameModel game;
-	private final GameView view;
+	private final GameStatus gs;
+	private final GamePrinter view;
 
-	public Controller(GameModel game) {
+	public Controller(GameModel game, GameStatus gs) {
+		this.gs = gs;
 		this.game = game;
-		this.view = new GamePrinter(game);
+		this.view = new GamePrinter(gs);
 	}
 
 	/**
@@ -35,14 +38,15 @@ public class Controller {
 	public void run() {
 		while (!game.hasGameFinished() && !game.playerQuits()) {
 			   // 2. Ask for user action
-			    String[] words = prompt();
+			    String[] words = view.getPrompt();
 			    Command command = Command.parse(words);
 			    if (command != null) {
 			        // 3-4. Game Action & Update. Draw if required
 			        command.execute(game, view);
 			    } else {
-			        view.showError(Messages.UNKNOWN_COMMAND));
+			        view.showError(Messages.UNKNOWN_COMMAND);
 			    }
 			}
 	}
+
 }

@@ -18,7 +18,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		
 	  private GameObjectContainer ObjectContainer;
 		
-	  public Game(long seed, Level level) {
+	  public Game(long seed, control.Level level) {
 			// TODO Auto-generated constructor stub
 			sunCoins = this.INITIAL_COINS;
 			cycles = 0;
@@ -28,6 +28,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.factory = new PlantFactory();
 		}
 	  //...
+
+	 
 
 	  @Override
 	  public void reset() {
@@ -45,8 +47,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  public void addPlant(String[] commandWords) {
 		// TODO Auto-generated method stub
 		  Plant p = this.factory.parse(commandWords, this);
-		  if(p != null);
-		  this.ObjectContainer.addObject(p);
+		  if(p != null)
+			  this.ObjectContainer.addObject(p);
 	  }
 
 	  @Override
