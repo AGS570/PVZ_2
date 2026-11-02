@@ -15,12 +15,13 @@ public class Zombie extends GameObject{
 		this.fr = 2;
 		this.dmg =1;
 		this.health = 5;
+		
+		this.name = Messages.ZOMBIE_NAME;
+		this.description = Messages.ZOMBIE_DESCRIPTION;
+		this.icon = Messages.ZOMBIE_ICON;
+		this.nameAndShortcut = Messages.ZOMBIE_NAME_AND_SHORTCUT;
 	}
-	@Override
-	public String getIcon() {
-		// TODO Auto-generated method stub
-		return Messages.ZOMBIE_ICON;
-	}
+	
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub

@@ -12,6 +12,7 @@ public interface GameModel {
 	public boolean playerQuits();
 	public String listPlants();
 	public boolean playerWins();
+	public void update();
 
 	
 }

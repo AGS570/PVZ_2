@@ -115,6 +115,6 @@ public class ZombieManager {
 
 	public void update() {
 		// TODO Auto-generated method stub
-		if(this.shouldAddZombie())this.addZombie();
+		this.addZombie();
 	}
 }
