@@ -14,6 +14,7 @@ public class SunFlower extends Plant{
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		this.coolDown = 3;
+		this.health = 1;
 		this.name = Messages.SUNFLOWER_NAME;
 		this.description = Messages.SUNFLOWER_DESCRIPTION;
 		this.icon = Messages.SUNFLOWER_ICON;
@@ -26,7 +27,9 @@ public class SunFlower extends Plant{
 
 	@Override 
 	public void update() {
-		if (this.coolDown <= 0) {
+		this.checkHealth();
+		if (this.coolDown <= 0 && this.isAlive) {
+			
 			this.getSun(SOLES);
 			this.coolDown = 3;
 		}else this.coolDown--;

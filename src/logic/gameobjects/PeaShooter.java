@@ -9,6 +9,7 @@ public class PeaShooter extends Plant{
 	public PeaShooter(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
+		this.health = 3;
 		this.name = Messages.PEASHOOTER_NAME;
 		this.description = Messages.PEASHOOTER_DESCRIPTION;
 		this.icon = Messages.PEASHOOTER_ICON;

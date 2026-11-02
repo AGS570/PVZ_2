@@ -14,6 +14,7 @@ public class Zombie extends GameObject{
 		// TODO Auto-generated constructor stub
 		this.fr = 2;
 		this.dmg =1;
+		this.health = 5;
 	}
 	@Override
 	public String getIcon() {

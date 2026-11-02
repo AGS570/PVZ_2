@@ -30,7 +30,7 @@ public abstract class GameObject implements GameItem {
 		  }
 
 	  public boolean isInPosition(Position other) {
-	    return this.position.equals(other);
+	    return this.position.isEqual(other);
 	  }
 
 	  public boolean isInRow(Position other) {
@@ -75,7 +75,7 @@ public abstract class GameObject implements GameItem {
 		  return false;
 	  }
 	  
-		public Object getNameAndShortcut() {
+		public String getNameAndShortcut() {
 			// TODO Auto-generated method stub
 			return this.nameAndShortcut;
 		}

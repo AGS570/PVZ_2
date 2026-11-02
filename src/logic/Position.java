@@ -45,7 +45,7 @@ public class Position {
 		return this.equals(np);
 	}
 	
-	private boolean equals(Position np) {
+	public boolean isEqual(Position np) {
 		return this.row  == np.row && this.col == np.col;
 	}
 	
