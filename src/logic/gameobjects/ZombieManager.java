@@ -103,7 +103,7 @@ public class ZombieManager {
 	
 	// TODO fill your code
 	public boolean zombiesRemain() {
-		return (this.remainingZombies == 0);
+		return (this.remainingZombies > 0);
 	}
 
 

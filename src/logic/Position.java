@@ -42,7 +42,7 @@ public class Position {
 	}
 	
 	public boolean isInPosition(Position np) {
-		return this.equals(np);
+		return this.isEqual(np);
 	}
 	
 	public boolean isEqual(Position np) {
