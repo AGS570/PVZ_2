@@ -44,7 +44,9 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public void addPlant(String[] commandWords) {
 		// TODO Auto-generated method stub
-		  this.factory.parse(commandWords, this);
+		  Plant p = this.factory.parse(commandWords, this);
+		  if(p != null);
+		  this.ObjectContainer.addObject(p);
 	  }
 
 	  @Override
