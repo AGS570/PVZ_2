@@ -39,6 +39,6 @@ public class ResetCommand extends Command{
 	@Override
 	public void execute(GameModel game, GameView view) {
 		// TODO Auto-generated method stub
-		
+		game.reset();
 	}
 }

@@ -34,7 +34,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public void reset() {
 		// TODO Auto-generated method stub
-		
+		this = new Game()
 	  }
 
 	  @Override
@@ -88,7 +88,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public String positionToString(Position position) {
 		// TODO Auto-generated method stub
-		return null;
+		return position.positionToString();
 	  }
 
 	  @Override
@@ -126,6 +126,31 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  public Plant addPeashooter(Position position) {
 		// TODO Auto-generated method stub
 		return new PeaShooter(this,position) ;
+	  }
+
+
+
+	  @Override
+	  public boolean hasGameFinished() {
+		// TODO Auto-generated method stub
+		return this.isGameFinished;
+	  }
+
+
+
+	  @Override
+	  public boolean playerQuits() {
+		// TODO Auto-generated method stub
+		return this.playerQuits;
+	  }
+
+
+
+	  @Override
+	  public String listPlants() {
+		// TODO Auto-generated method stub
+		String s = this.factory.list();
+		return s;
 	  }
 
 	  

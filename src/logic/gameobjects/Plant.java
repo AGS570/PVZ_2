@@ -2,6 +2,7 @@ package logic.gameobjects;
 
 import logic.GameWorld;
 import logic.Position;
+import view.Messages;
 
 public class Plant extends GameObject{
 	
@@ -9,6 +10,7 @@ public class Plant extends GameObject{
 	public Plant(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	
@@ -67,6 +69,8 @@ public class Plant extends GameObject{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 
 

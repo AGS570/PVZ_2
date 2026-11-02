@@ -2,6 +2,7 @@ package logic.gameobjects;
 
 import logic.GameWorld;
 import logic.Position;
+import view.Messages;
 
 public class SunFlower extends Plant{
 	
@@ -13,6 +14,10 @@ public class SunFlower extends Plant{
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		this.coolDown = 3;
+		this.name = Messages.SUNFLOWER_NAME;
+		this.description = Messages.SUNFLOWER_DESCRIPTION;
+		this.icon = Messages.SUNFLOWER_ICON;
+		this.shortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
 	}
 	
 	public SunFlower() {

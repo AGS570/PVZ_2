@@ -10,6 +10,7 @@ public interface GameModel {
 	public void finishGame(boolean b);
 	public boolean hasGameFinished();
 	public boolean playerQuits();
+	public String listPlants();
 
 	
 }

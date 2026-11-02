@@ -10,6 +10,14 @@ public abstract class GameObject implements GameItem {
 	  protected int health;
 	  protected boolean isAlive;
 	  
+	  //...
+	protected String name = "";
+	protected String nameAndShortcut = "";
+	protected String description = "";
+	protected String icon = "";
+	  //...
+
+	  
 	  GameObject(GameWorld game, Position p) {
 	    this.game = game;
 	    this.position = p;
@@ -31,9 +39,13 @@ public abstract class GameObject implements GameItem {
 	  
 	  public Position getPosition() { return this.position;}
 
-	  abstract public String getIcon();
+	  public String getIcon() {
+		  return this.icon;
+	  }
 
-	  abstract public String getDescription();
+	  public String getDescription() {
+		  return this.description;
+	  }
 
 	  public boolean isAlive() {
 		  return this.isAlive;
@@ -63,6 +75,12 @@ public abstract class GameObject implements GameItem {
 		  return false;
 	  }
 	  
+		public Object getNameAndShortcut() {
+			// TODO Auto-generated method stub
+			return this.nameAndShortcut;
+		}
+
+		
 
 	
 	  

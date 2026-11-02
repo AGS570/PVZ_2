@@ -4,8 +4,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import command.Command;
 import logic.GameWorld;
 import logic.Position;
+import view.Messages;
 
 public class PlantFactory {
 
@@ -45,6 +47,20 @@ public class PlantFactory {
 		  Position p = new Position(r,c);
 		  
 		  return this.spawnPlant(commandWords[1], game, p);
+	  }
+
+	  public String list() {
+		// TODO Auto-generated method stub
+		   StringBuilder result = new StringBuilder();
+
+		    for (Plant p : AVAILABLE_PLANTS) {
+		        result.append(p.getNameAndShortcut())
+
+		              .append(": ")
+		              .append(p.getDescription())
+		              .append(Messages.LINE_SEPARATOR);
+		    }
+		    return result.toString();
 	  }
 
 

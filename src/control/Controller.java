@@ -46,6 +46,7 @@ public class Controller {
 			    } else {
 			        view.showError(Messages.UNKNOWN_COMMAND);
 			    }
+			    this.view.showGame();
 			}
 	}
 

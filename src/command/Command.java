@@ -12,7 +12,8 @@ public abstract class Command{
 	      new AddPlantCommand(),
 	      new ListPlantsCommand(),
 	      new ResetCommand(),
-	      new HelpCommand()
+	      new HelpCommand(),
+	      new ExitCommand()
 	 );
 	  
 	  //...
@@ -24,6 +25,7 @@ public abstract class Command{
 
 	
 	  public static Command parse(String[] commandWords) {
+		  if (commandWords.length == 0) return null;
 		  for( Command command : AVAILABLE_COMMANDS)
 			  if (command.matchCommand(commandWords[0])) {
 				  return command.create(commandWords);
