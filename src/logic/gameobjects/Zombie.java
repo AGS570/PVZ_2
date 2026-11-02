@@ -61,7 +61,7 @@ public class Zombie extends GameObject{
 	}
 	
 	private boolean move(Position np) {
-		if(np.isEmpty()) {
+		if(game.isInsideBoard(np) && game.isEmpty(np)) {
 			this.position = np;
 			return true;
 		}else return false;

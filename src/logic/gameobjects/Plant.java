@@ -18,17 +18,7 @@ public class Plant extends GameObject{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String getIcon() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void onEnter() {

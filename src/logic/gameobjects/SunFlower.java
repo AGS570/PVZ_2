@@ -17,7 +17,7 @@ public class SunFlower extends Plant{
 		this.name = Messages.SUNFLOWER_NAME;
 		this.description = Messages.SUNFLOWER_DESCRIPTION;
 		this.icon = Messages.SUNFLOWER_ICON;
-		this.shortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
+		this.nameAndShortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
 	}
 	
 	public SunFlower() {

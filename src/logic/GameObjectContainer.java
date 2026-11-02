@@ -52,6 +52,13 @@ public class GameObjectContainer {
 		}
 		return false;
 	  }
+	  public boolean isPositionEmpty(Position position) {
+		// TODO Auto-generated method stub
+		for(GameObject go : gameObjects) {
+			if(go.isInPosition(position))return false;
+		}
+		return true;
+	  }
 	  
 	  
 	//...

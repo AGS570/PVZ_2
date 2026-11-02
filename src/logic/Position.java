@@ -27,14 +27,11 @@ public class Position {
     	return false;
     }
 
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	public boolean inBoard() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.row >= 0 && this.row < GameWorld.NUM_ROWS && this.col >= 0 && this.col < GameWorld.NUM_COLS;
 	}
 	
 	public Position newPosition() {

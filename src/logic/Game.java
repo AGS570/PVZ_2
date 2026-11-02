@@ -69,7 +69,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public boolean isEmpty(Position position) {
 		// TODO Auto-generated method stub
-		return position.isEmpty();
+		return this.ObjectContainer.isPositionEmpty(position);
 	  }
 
 	  @Override
