@@ -59,6 +59,13 @@ public class GameObjectContainer {
 		}
 		return true;
 	  }
+	  public String positionToString(Position position) {
+		// TODO Auto-generated method stub
+		  for(GameObject o: this.gameObjects) {
+				if(o.isInPosition(position))return o.getIcon();
+			}
+			return " ";
+	  }
 	  
 	  
 	//...

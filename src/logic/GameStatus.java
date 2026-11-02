@@ -5,4 +5,8 @@ public interface GameStatus {
 
 	String positionToString(Position position);
 
+	int getSuncoins();
+
+	int getRemainingZombies();
+
 }

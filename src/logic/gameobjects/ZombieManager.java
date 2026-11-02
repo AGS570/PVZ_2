@@ -112,4 +112,9 @@ public class ZombieManager {
 		// TODO Auto-generated method stub
 		game.finishGame(b);
 	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		if(this.shouldAddZombie())this.addZombie();
+	}
 }

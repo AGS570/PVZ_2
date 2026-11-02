@@ -40,7 +40,7 @@ public abstract class GameObject implements GameItem {
 	  public Position getPosition() { return this.position;}
 
 	  public String getIcon() {
-		  return this.icon;
+		  return this.icon.formatted(this.health);
 	  }
 
 	  public String getDescription() {

@@ -55,10 +55,10 @@ public class Position {
 		return false;
 	}
 
-	public String positionToString() {
+	/*public String positionToString() {
 		// TODO Auto-generated method stub
 		return this.row + " " + this.col;
-	}
+	}*/
 	
 	
 }

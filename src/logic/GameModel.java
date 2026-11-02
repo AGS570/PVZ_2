@@ -11,6 +11,7 @@ public interface GameModel {
 	public boolean hasGameFinished();
 	public boolean playerQuits();
 	public String listPlants();
+	public boolean playerWins();
 
 	
 }

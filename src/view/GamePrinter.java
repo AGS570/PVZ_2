@@ -64,10 +64,18 @@ public class GamePrinter implements GameView {
 	private String getInfo() {
 		StringBuilder buffer = new StringBuilder();
 
-		// TODO fill your code
+		// 1. Añadimos el número de ciclos
+		buffer.append(String.format(Messages.NUMBER_OF_CYCLES, game.getCycles()));
+				
+		// 2. Añadimos los soles del jugador
+		buffer.append(String.format(Messages.NUMBER_OF_COINS, game.getSuncoins()));
+				
+		// 3. Añadimos los zombis que faltan por salir
+		buffer.append(String.format(Messages.REMAINING_ZOMBIES, game.getRemainingZombies()));
 
 		return buffer.toString();
 	}
+
 
 	/**
 	 * Prints complete representation (status+board) of the game.

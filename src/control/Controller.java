@@ -36,6 +36,7 @@ public class Controller {
 	 * Runs the game logic.
 	 */
 	public void run() {
+		view.showGame();
 		while (!game.hasGameFinished() && !game.playerQuits()) {
 			   // 2. Ask for user action
 			    String[] words = view.getPrompt();
@@ -48,6 +49,13 @@ public class Controller {
 			    }
 			    this.view.showGame();
 			}
+		if (!game.hasGameFinished()) {
+		    view.showMessage(Messages.PLAYER_QUITS);
+		} else if (game.playerWins()) {
+		    view.showMessage(Messages.PLAYER_WINS);
+		} else {
+		    view.showMessage(Messages.ZOMBIES_WIN);
+		}
 	}
 
 }

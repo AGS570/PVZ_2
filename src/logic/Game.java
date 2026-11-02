@@ -9,6 +9,7 @@ import logic.gameobjects.Plant;
 import logic.gameobjects.PlantFactory;
 import logic.gameobjects.SunFlower;
 import logic.gameobjects.Zombie;
+import logic.gameobjects.ZombieManager;
 
 public class Game implements GameStatus, GameWorld, GameModel {
 
@@ -22,6 +23,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private Level level;
 	  
 	  private GameObjectContainer ObjectContainer;
+	  private ZombieManager zombieManager;
+	  private boolean playerWins;
 		
 	  public Game(long seed, control.Level level) {
 			// TODO Auto-generated constructor stub
@@ -32,6 +35,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.playerQuits = false;
 			this.rand = new Random(seed);
 			this.factory = new PlantFactory();
+			this.zombieManager = new ZombieManager(this,level,rand);
+			this.playerWins = false;
 		}
 	  //...
 
@@ -44,6 +49,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		    isGameFinished = false;
 		    playerQuits = false;
 		    ObjectContainer = new GameObjectContainer();
+		    this.zombieManager = new ZombieManager(this,level,rand);
 
 		}
 	  @Override
@@ -85,7 +91,9 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  }
 	  
 	  public void update() {
+		  this.cycles++;
 		  this.ObjectContainer.update();
+		  this.zombieManager.update();
 	  }
 
 	  @Override
@@ -97,7 +105,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public String positionToString(Position position) {
 		// TODO Auto-generated method stub
-		return position.positionToString();
+		return this.ObjectContainer.positionToString(position);
 	  }
 
 	  @Override
@@ -160,6 +168,30 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		String s = this.factory.list();
 		return s;
+	  }
+
+
+
+	  @Override
+	  public boolean playerWins() {
+		// TODO Auto-generated method stub
+		return this.playerWins;
+	  }
+
+
+
+	  @Override
+	  public int getSuncoins() {
+		// TODO Auto-generated method stub
+		return this.sunCoins;
+	  }
+
+
+
+	  @Override
+	  public int getRemainingZombies() {
+		// TODO Auto-generated method stub
+		return this.zombieManager.getRemainingZombies();
 	  }
 
 	  
