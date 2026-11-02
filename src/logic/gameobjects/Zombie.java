@@ -31,7 +31,8 @@ public class Zombie extends GameObject{
 	public void update() {
 		// TODO Auto-generated method stub
 		this.checkHealth();
-		if(this.isAlive) {
+		this.win();
+		if(this.isAlive ) {
 			Position np = this.position.newPosition();
 			if(!move(np)) {
 				this.game.doAttack(this);
@@ -76,7 +77,7 @@ public class Zombie extends GameObject{
 	}
 	@Override
 	public boolean receiveAttack(PeaShooter obj) {
-		if(obj == null) return false;
+		if(obj == null || this.isAlive == false) return false;
 		else {
 			this.health -= 1; 
 			this.checkHealth();

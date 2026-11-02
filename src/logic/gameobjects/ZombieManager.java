@@ -127,6 +127,6 @@ public class ZombieManager {
 	}
 	
 	public boolean allZombiesDead() {
-	    return deadZombies == totalZombies;
+	    return deadZombies >= totalZombies;
 	}
 }
