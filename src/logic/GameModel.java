@@ -13,6 +13,8 @@ public interface GameModel {
 	public String listPlants();
 	public boolean playerWins();
 	public void update();
+	void zombieDied();
+	void ZombiesWin();
 
 	
 }

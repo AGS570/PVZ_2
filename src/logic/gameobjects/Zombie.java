@@ -84,6 +84,19 @@ public class Zombie extends GameObject{
 		}
 	}
 	
+	@Override
+	public void death() {
+	    super.death();
+	    game.zombieDied();
+	}
 	
+	private void win() {
+		if(this.position.ReachedHome())this.game.ZombiesWin();
+	}
+
+	private void ZombiesWin() {
+		// TODO Auto-generated method stub
+		this.game.ZombiesWin();
+	}
 
 }

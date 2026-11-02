@@ -25,6 +25,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private GameObjectContainer ObjectContainer;
 	  private ZombieManager zombieManager;
 	  private boolean playerWins;
+	  private boolean zombiesWin;
 		
 	  public Game(long seed, control.Level level) {
 			// TODO Auto-generated constructor stub
@@ -193,6 +194,31 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return this.zombieManager.getRemainingZombies();
+	  }
+
+
+
+	  @Override
+	  public void pWins() {
+		// TODO Auto-generated method stub
+		this.playerWins = true;
+		this.finishGame(true);
+	  }
+
+
+
+	  @Override
+	  public void zombieDied() {
+		// TODO Auto-generated method stub
+		this.zombieManager.zombieDied();
+	  }
+
+
+
+	  @Override
+	  public void ZombiesWin() {
+		// TODO Auto-generated method stub
+			this.finishGame(true);
 	  }
 
 	  

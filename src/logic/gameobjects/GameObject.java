@@ -62,7 +62,7 @@ public abstract class GameObject implements GameItem {
 		  if(this.health <= 0) this.death();
 	  }
 
-	  private void death() {
+	  protected void death() {
 		// TODO Auto-generated method stub
 		this.isAlive = false;
 	  }

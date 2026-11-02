@@ -55,6 +55,11 @@ public class Position {
 		return false;
 	}
 
+	public boolean ReachedHome() {
+		// TODO Auto-generated method stub
+		return this.col == 0;
+	}
+
 	/*public String positionToString() {
 		// TODO Auto-generated method stub
 		return this.row + " " + this.col;

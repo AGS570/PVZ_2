@@ -17,6 +17,9 @@ public interface GameWorld {
 	  void addZombie(Zombie zombie);
 	  Plant addSunflower(Position position);
 	  Plant addPeashooter(Position position);
+	  void pWins();
+	  void zombieDied();
+	  void ZombiesWin();
 
 	  // ...
 	}

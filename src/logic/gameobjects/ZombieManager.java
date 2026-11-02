@@ -33,13 +33,16 @@ public class ZombieManager {
 	private Random rand;
 
 	private int remainingZombies;
-
+	private int totalZombies;
+	private int deadZombies;
 
 	public ZombieManager(GameWorld game, Level level, Random rand) {
 		this.game = game;
 		this.level = level;
 		this.rand = rand;
 		this.remainingZombies = level.getNumberOfZombies();
+		this.totalZombies = this.remainingZombies;
+		this.deadZombies = 0;
 	}
 
 	/**
@@ -115,6 +118,15 @@ public class ZombieManager {
 
 	public void update() {
 		// TODO Auto-generated method stub
+		if(this.allZombiesDead())game.pWins();
 		this.addZombie();
+		
+	}
+	public void zombieDied() {
+	    deadZombies++;
+	}
+	
+	public boolean allZombiesDead() {
+	    return deadZombies == totalZombies;
 	}
 }
