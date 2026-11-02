@@ -1,6 +1,7 @@
 package logic;
 
 import logic.gameobjects.GameItem;
+import logic.gameobjects.Plant;
 import logic.gameobjects.Zombie;
 
 public interface GameWorld {
@@ -14,8 +15,8 @@ public interface GameWorld {
 	  void shoot();
 	  void doAttack(GameItem obj);
 	  void addZombie(Zombie zombie);
-	  Object addSunflower(Position position);
-	  Object addPeashooter(Position position);
+	  Plant addSunflower(Position position);
+	  Plant addPeashooter(Position position);
 
 	  // ...
 	}

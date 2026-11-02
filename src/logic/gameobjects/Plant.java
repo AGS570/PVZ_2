@@ -6,11 +6,16 @@ import logic.Position;
 public class Plant extends GameObject{
 	
 	private int coolDown = 3;
-	Plant(GameWorld game, Position p) {
+	public Plant(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	public Plant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String getIcon() {
 		// TODO Auto-generated method stub

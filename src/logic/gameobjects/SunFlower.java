@@ -9,7 +9,7 @@ public class SunFlower extends Plant{
 	
 	private int coolDown;
 	
-	SunFlower(GameWorld game, Position p) {
+	public SunFlower(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		this.coolDown = 3;

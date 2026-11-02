@@ -5,13 +5,14 @@ import logic.Position;
 
 public class PeaShooter extends Plant{
 
-	PeaShooter(GameWorld game, Position p) {
+	public PeaShooter(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
 	}
 
-	public PeaShooter() {
+	public  PeaShooter() {
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override 

@@ -15,6 +15,11 @@ public abstract class GameObject implements GameItem {
 	    this.position = p;
 	    this.isAlive = true;
 	  }
+	  
+	  
+	  GameObject() {
+		    
+		  }
 
 	  public boolean isInPosition(Position other) {
 	    return this.position.equals(other);

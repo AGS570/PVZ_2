@@ -16,7 +16,7 @@ public class PlantFactory {
 
 
 	  public static Plant spawnPlant(String plantName, GameWorld game, Position position) {
-		  int result;
+		  Plant result = null;
 		  switch(plantName) {
 		  	case "sunflower":
 		  	case "s":
@@ -28,10 +28,28 @@ public class PlantFactory {
 		  		result = game.addPeashooter(position);
 		    break;
 		  }
+		  
+		  return result;
 	  }
 
 	  public static List<Plant> getAvailablePlants() {
 	    return Collections.unmodifiableList(AVAILABLE_PLANTS);
 	  }
 	  // ...
-	}
+
+	  public Plant parse(String[] commandWords, GameWorld game) {
+		  if(commandWords.length < 4) return null;
+		  int r = Integer.parseInt(commandWords[2]);
+		  int c = Integer.parseInt(commandWords[3]);
+		  
+		  Position p = new Position(r,c);
+		  
+		  return this.spawnPlant(commandWords[1], game, p);
+	  }
+
+
+
+}
+
+
+

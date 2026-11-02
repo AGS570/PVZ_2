@@ -21,7 +21,7 @@ import pvz.view.Messages;
  */
 public class Controller {
 
-	private final Game game;
+	private final GameModel game;
 	private final GameView view;
 
 	public Controller(GameModel game) {

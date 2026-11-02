@@ -1,6 +1,10 @@
 package logic;
 
 import logic.gameobjects.GameItem;
+import logic.gameobjects.PeaShooter;
+import logic.gameobjects.Plant;
+import logic.gameobjects.PlantFactory;
+import logic.gameobjects.SunFlower;
 import logic.gameobjects.Zombie;
 
 public class Game implements GameStatus, GameWorld, GameModel {
@@ -10,6 +14,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private boolean playerQuits;	  
 	  private int cycles;
 	  private boolean isGameFinished;
+	  private PlantFactory factory;
 		
 	  private GameObjectContainer ObjectContainer;
 		
@@ -20,6 +25,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.ObjectContainer = new GameObjectContainer();
 			this.isGameFinished = false;
 			this.playerQuits = false;
+			this.factory = new PlantFactory();
 		}
 	  //...
 
@@ -38,6 +44,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  @Override
 	  public void addPlant(String[] commandWords) {
 		// TODO Auto-generated method stub
+		  this.factory.parse(commandWords, this);
 	  }
 
 	  @Override
@@ -103,6 +110,18 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  public void addZombie(Zombie zombie) {
 		// TODO Auto-generated method stub
 		this.ObjectContainer.addObject(zombie);
+	  }
+
+	  @Override
+	  public Plant addSunflower(Position position) {
+		// TODO Auto-generated method stub
+		return new SunFlower(this,position) ;
+	  }
+
+	  @Override
+	  public Plant addPeashooter(Position position) {
+		// TODO Auto-generated method stub
+		return new PeaShooter(this,position) ;
 	  }
 
 	  
