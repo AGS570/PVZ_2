@@ -1,5 +1,8 @@
 package logic;
 
+import java.util.Random;
+
+import control.Level;
 import logic.gameobjects.GameItem;
 import logic.gameobjects.PeaShooter;
 import logic.gameobjects.Plant;
@@ -15,7 +18,9 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private int cycles;
 	  private boolean isGameFinished;
 	  private PlantFactory factory;
-		
+	  private Random rand;
+	  private Level level;
+	  
 	  private GameObjectContainer ObjectContainer;
 		
 	  public Game(long seed, control.Level level) {
@@ -25,6 +30,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.ObjectContainer = new GameObjectContainer();
 			this.isGameFinished = false;
 			this.playerQuits = false;
+			this.rand = new Random(seed);
 			this.factory = new PlantFactory();
 		}
 	  //...
@@ -33,10 +39,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 	  @Override
 	  public void reset() {
-		// TODO Auto-generated method stub
-		this = new Game()
-	  }
+		    sunCoins = INITIAL_COINS;
+		    cycles = 0;
+		    isGameFinished = false;
+		    playerQuits = false;
+		    ObjectContainer = new GameObjectContainer();
 
+		}
 	  @Override
 	  public void help() {
 		// TODO Auto-generated method stub
