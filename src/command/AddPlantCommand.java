@@ -7,7 +7,6 @@ import view.Messages;
 public class AddPlantCommand extends Command{
 
 	String[] plantWords;
-	private Object game;
 	public AddPlantCommand() {
 		this.name = Messages.COMMAND_ADD_PLANT_NAME;
 		this.shortcut = Messages.COMMAND_ADD_PLANT_SHORTCUT;

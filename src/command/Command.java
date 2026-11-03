@@ -13,7 +13,8 @@ public abstract class Command{
 	      new ListPlantsCommand(),
 	      new ResetCommand(),
 	      new HelpCommand(),
-	      new ExitCommand()
+	      new ExitCommand(),
+	      new UpdateCommand()
 	 );
 	  
 	  //...
