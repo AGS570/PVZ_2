@@ -20,6 +20,7 @@ public interface GameWorld {
 	  void pWins();
 	  void zombieDied();
 	  void ZombiesWin();
+	  boolean canAfford(int cost);
 
 	  // ...
 	}

@@ -7,6 +7,7 @@ import java.util.List;
 import command.Command;
 import logic.GameWorld;
 import logic.Position;
+import utils.Utilidades;
 import view.Messages;
 
 public class PlantFactory {
@@ -22,12 +23,15 @@ public class PlantFactory {
 		  switch(plantName) {
 		  	case "sunflower":
 		  	case "s":
-		  		result = game.addSunflower(position);
+		  		if(game.canAfford(Utilidades.SUNFLOWER_COST))
+		  			result = game.addSunflower(position);
 		    break;
 
 		  	case "peashooter":
 		  	case "p":
-		  		result = game.addPeashooter(position);
+		  		if(game.canAfford(Utilidades.PEASHOOTER_COST))
+		  			result = game.addPeashooter(position);
+		  		
 		    break;
 		  }
 		  

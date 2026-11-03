@@ -222,5 +222,17 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.finishGame(true);
 	  }
 
+
+
+	  @Override
+	  public boolean canAfford(int cost) {
+		// TODO Auto-generated method stub
+		  if(this.sunCoins >= cost) {
+			  this.sunCoins -= cost;
+			  return true;
+		  }
+		return false;
+	  }
+
 	  
 }
