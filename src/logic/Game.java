@@ -4,6 +4,7 @@ import java.util.Random;
 
 import control.Level;
 import logic.gameobjects.GameItem;
+import logic.gameobjects.GameObject;
 import logic.gameobjects.Plant;
 import logic.gameobjects.PlantFactory;
 import logic.gameobjects.ZombieManager;

@@ -10,7 +10,6 @@ public class Zombie extends GameObject{
 	private int dmg;
 	
 	
-	
 	Zombie(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
@@ -68,8 +67,14 @@ public class Zombie extends GameObject{
 	
 	private boolean move(Position np) {
 		if(game.isInsideBoard(np) && game.isEmpty(np)) {
-			this.position = np;
-			return true;
+			if(this.fr == 0) {
+				this.position = np;
+				this.fr = 2;
+				return true;				
+			}else {
+				fr--;		
+			}
+			return false;
 		}else return false;
 	}
 
