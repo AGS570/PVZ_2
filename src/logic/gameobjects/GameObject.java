@@ -1,3 +1,4 @@
+
 package logic.gameobjects;
 
 import logic.GameWorld;
@@ -5,87 +6,81 @@ import logic.Position;
 
 public abstract class GameObject implements GameItem {
 
-	  protected GameWorld game;
-	  protected Position position;
-	  protected int health;
-	  protected boolean isAlive;
-	  
-	  //...
-	protected String name = "";
-	protected String nameAndShortcut = "";
-	protected String description = "";
-	protected String icon = "";
-	  //...
+    protected GameWorld game;
+    protected Position position;
+    protected int health;
+    protected boolean isAlive;
 
-	  
-	  GameObject(GameWorld game, Position p) {
-	    this.game = game;
-	    this.position = p;
-	    this.isAlive = true;
-	  }
-	  
-	  
-	  GameObject() {
-		    
-		  }
+    protected String name = "";
+    protected String nameAndShortcut = "";
+    protected String description = "";
+    protected String icon = "";
 
-	  public boolean isInPosition(Position other) {
-	    return this.position.isEqual(other);
-	  }
+    protected GameObject(GameWorld game, Position position) {
+        this.game = game;
+        this.position = position;
+        this.isAlive = true;
+    }
 
-	  public boolean isInRow(Position other) {
-		    return this.position.isInRow(other);
-		  }
-	  
-	  public Position getPosition() { return this.position;}
+    protected GameObject() {
+        this.isAlive = true;
+    }
 
-	  public String getIcon() {
-		  return this.icon.formatted(this.health);
-	  }
+    @Override
+    public boolean isInPosition(Position other) {
+        return this.position != null
+                && this.position.isEqual(other);
+    }
 
-	  public String getDescription() {
-		  return this.description;
-	  }
+    @Override
+    public boolean isInRow(Position other) {
+        return this.position != null
+                && this.position.isInRow(other);
+    }
 
-	  public boolean isAlive() {
-		  return this.isAlive;
-	  };
+    public Position getPosition() {
+        return this.position;
+    }
 
-	  abstract public void update();
-	  
-	  
-	  abstract public void onEnter();
+    public String getIcon() {
+        return this.icon.formatted(this.health);
+    }
 
-	  abstract public void onExit();
+    public String getDescription() {
+        return this.description;
+    }
 
-	  public void checkHealth() {
-		  if(this.health <= 0) this.death();
-	  }
+    public String getNameAndShortcut() {
+        return this.nameAndShortcut;
+    }
 
-	  protected void death() {
-		// TODO Auto-generated method stub
-		this.isAlive = false;
-	  }
-	  
-	  public boolean receiveInteraction(Zombie obj,int dmf) {
-		  return false;
-	  }
-	  
-	  public boolean receiveInteraction(PeaShooter obj, int dmg) {
-		  return false;
-	  }
-	  
-		public String getNameAndShortcut() {
-			// TODO Auto-generated method stub
-			return this.nameAndShortcut;
-		}
+    public boolean isAlive() {
+        return this.isAlive;
+    }
 
-		
+    public abstract void update();
 
-	
-	  
-	  
-	  
-	  
-	  
+    public abstract void onEnter();
+
+    public abstract void onExit();
+
+    public void checkHealth() {
+        if (this.health <= 0) {
+            this.death();
+        }
+    }
+
+    protected void death() {
+        this.isAlive = false;
+    }
+
+    @Override
+    public boolean receiveZombieAttack(int damage) {
+        return false;
+    }
+
+    @Override
+    public boolean receivePeaAttack(int damage) {
+        return false;
+    }
 }

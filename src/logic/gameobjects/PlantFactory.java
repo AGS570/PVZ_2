@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import command.Command;
+
 import logic.GameWorld;
 import logic.Position;
 import utils.Utilidades;
@@ -19,24 +19,28 @@ public class PlantFactory {
 
 
 	  public static Plant spawnPlant(String plantName, GameWorld game, Position position) {
-		  Plant result = null;
-		  switch(plantName) {
-		  	case "sunflower":
-		  	case "s":
-		  		if(game.canAfford(Utilidades.SUNFLOWER_COST))
-		  			result = game.addSunflower(position);
-		    break;
+		    if (plantName == null || game == null || position == null) {
+		        return null;
+		    }
 
-		  	case "peashooter":
-		  	case "p":
-		  		if(game.canAfford(Utilidades.PEASHOOTER_COST))
-		  			result = game.addPeashooter(position);
-		  		
-		    break;
-		  }
-		  
-		  return result;
-	  }
+		    switch (plantName.toLowerCase()) {
+		        case "sunflower":
+		        case "s":
+		            if (game.canAfford(Utilidades.SUNFLOWER_COST)) {
+		                return new SunFlower(game, position);
+		            }
+		            break;
+
+		        case "peashooter":
+		        case "p":
+		            if (game.canAfford(Utilidades.PEASHOOTER_COST)) {
+		                return new PeaShooter(game, position);
+		            }
+		            break;
+		    }
+
+		    return null;
+		}
 
 	  public static List<Plant> getAvailablePlants() {
 	    return Collections.unmodifiableList(AVAILABLE_PLANTS);
@@ -44,13 +48,13 @@ public class PlantFactory {
 	  // ...
 
 	  public Plant parse(String[] commandWords, GameWorld game) {
-		  if(commandWords.length < 4) return null;
+		  if(commandWords == null || commandWords.length < 4) return null;
 		  int r = Integer.parseInt(commandWords[2]);
 		  int c = Integer.parseInt(commandWords[3]);
 		  
 		  Position p = new Position(r,c);
 		  
-		  return this.spawnPlant(commandWords[1], game, p);
+		  return spawnPlant(commandWords[1], game, p);
 	  }
 
 	  public String list() {

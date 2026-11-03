@@ -16,32 +16,31 @@ public class PeaShooter extends Plant{
 		this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
 	}
 
-	public  PeaShooter() {
-		// TODO Auto-generated constructor stub
-		
-	}
+	 public PeaShooter() {
+	        super();
+	    }
 
-	@Override 
-	public void update() {
-		this.checkHealth();
-		if(this.isAlive)
-			this.game.doAttack(this);
-	}
+	    @Override
+	    public void update() {
+	        this.checkHealth();
 
-	private void shoot() {
-		// TODO Auto-generated method stub
-		this.game.shoot();
-	}
-	
-	@Override
-	public boolean attack(GameItem other) {
-		// TODO Auto-generated method stub
-		if(other.isInRow(position)) {
-			return other.receiveAttack(this);
-			
-		}
-		return false;
-	}
+	        if (this.isAlive) {
+	            this.game.doAttack(this);
+	        }
+	    }
+
+	    @Override
+	    public boolean attack(GameItem other) {
+	        if (other == null) {
+	            return false;
+	        }
+
+	        if (other.isInRow(this.position)) {
+	            return other.receivePeaAttack(1);
+	        }
+
+	        return false;
+	    }
 
 }
 

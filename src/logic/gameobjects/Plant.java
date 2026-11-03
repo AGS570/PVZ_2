@@ -45,20 +45,21 @@ public class Plant extends GameObject{
 		return false;
 	}
 
-	public boolean receiveAttack(Zombie obj) {
-		if(obj == null) return false;
-		else {
-			this.health -= 1; 
-			this.checkHealth();
-			return true;
-		}
-	}
-	
-	@Override
-	public boolean receiveAttack(PeaShooter obj) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean receiveZombieAttack(int damage) {
+        if (!this.isAlive || damage <= 0) {
+            return false;
+        }
+
+        this.health -= damage;
+        this.checkHealth();
+        return true;
+    }
+
+    @Override
+    public boolean receivePeaAttack(int damage) {
+        return false;
+    }
 
 
 

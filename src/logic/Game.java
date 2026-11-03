@@ -4,11 +4,8 @@ import java.util.Random;
 
 import control.Level;
 import logic.gameobjects.GameItem;
-import logic.gameobjects.PeaShooter;
 import logic.gameobjects.Plant;
 import logic.gameobjects.PlantFactory;
-import logic.gameobjects.SunFlower;
-import logic.gameobjects.Zombie;
 import logic.gameobjects.ZombieManager;
 
 public class Game implements GameStatus, GameWorld, GameModel {
@@ -131,22 +128,12 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  }
 
 	  @Override
-	  public void addZombie(Zombie zombie) {
+	  public void addZombie(GameObject zombie) {
 		// TODO Auto-generated method stub
 		this.ObjectContainer.addObject(zombie);
 	  }
 
-	  @Override
-	  public Plant addSunflower(Position position) {
-		// TODO Auto-generated method stub
-		return new SunFlower(this,position) ;
-	  }
-
-	  @Override
-	  public Plant addPeashooter(Position position) {
-		// TODO Auto-generated method stub
-		return new PeaShooter(this,position) ;
-	  }
+	  
 
 
 

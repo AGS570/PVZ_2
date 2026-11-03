@@ -5,12 +5,11 @@ import java.util.List;
 
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
-import logic.gameobjects.ZombieManager;
+
 
 public class GameObjectContainer {
 
-	  private List<GameObject> gameObjects;
-	  private ZombieManager zMng;
+	  private final List<GameObject> gameObjects;	
 	  public GameObjectContainer() {
 	    gameObjects = new ArrayList<>();
 	  }
@@ -35,7 +34,9 @@ public class GameObjectContainer {
 	  
 	  private void clean() {
 		    for (int i = 0; i < gameObjects.size(); i++) {
+		    	GameObject object = gameObjects.get(i);
 		        if (!gameObjects.get(i).isAlive()) {
+		        	object.onExit();
 		            gameObjects.remove(i);
 		            i--;
 		        }
@@ -44,6 +45,7 @@ public class GameObjectContainer {
 	  
 	  public void addObject(GameObject obj) {
 		  this.gameObjects.add(obj);
+		  obj.onEnter();
 	  }
 	  public boolean doAttack(GameItem obj) {
 		// TODO Auto-generated method stub
