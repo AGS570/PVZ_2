@@ -6,11 +6,12 @@ import view.Messages;
 
 public class Plant extends GameObject{
 	
+	protected int cost;
 	private int coolDown = 3;
 	public Plant(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
-		
+		cost =0;
 	}
 
 	
@@ -62,7 +63,19 @@ public class Plant extends GameObject{
     }
 
 
+	public boolean canAfford(int sunCoins) {
+		// TODO Auto-generated method stub
+		return sunCoins >= this.cost;
+	}
 
 
+///--------------------------------------------
+/// 
+/// REVISAR
+/// 
+/// --------------------------------------------
 
+	public int getCost() {
+		return cost;
+	}
 }

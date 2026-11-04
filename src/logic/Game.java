@@ -8,6 +8,7 @@ import logic.gameobjects.GameObject;
 import logic.gameobjects.Plant;
 import logic.gameobjects.PlantFactory;
 import logic.gameobjects.ZombieManager;
+import view.Messages;
 
 public class Game implements GameStatus, GameWorld, GameModel {
 
@@ -63,10 +64,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		  Plant p = this.factory.parse(commandWords, this);
 		  if(p != null) {
-			  this.ObjectContainer.addObject(p);
-			  return "Ok";
+			  if(p.canAfford(this.sunCoins)) {
+				  this.sunCoins -= p.getCost();
+				  this.ObjectContainer.addObject(p);
+				  return "Ok";
+			  }else return Messages.NOT_ENOUGH_COINS;
 		  }
-		  else return "Error";
+		  else return Messages.INVALID_POSITION;
 	  }
 
 	  @Override
@@ -215,15 +219,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 
 
-	  @Override
-	  public boolean canAfford(int cost) {
-		// TODO Auto-generated method stub
-		  if(this.sunCoins >= cost) {
-			  this.sunCoins -= cost;
-			  return true;
-		  }
-		return false;
-	  }
+	 
 
 	  
 }

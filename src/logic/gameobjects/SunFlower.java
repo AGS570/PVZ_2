@@ -2,6 +2,7 @@ package logic.gameobjects;
 
 import logic.GameWorld;
 import logic.Position;
+import utils.Utilidades;
 import view.Messages;
 
 public class SunFlower extends Plant{
@@ -19,6 +20,7 @@ public class SunFlower extends Plant{
 		this.description = Messages.SUNFLOWER_DESCRIPTION;
 		this.icon = Messages.SUNFLOWER_ICON;
 		this.nameAndShortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
+		this.cost = Utilidades.SUNFLOWER_COST;
 	}
 	
 	public SunFlower() {

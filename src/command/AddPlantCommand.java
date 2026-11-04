@@ -41,6 +41,6 @@ public class AddPlantCommand extends Command{
 		// TODO Auto-generated method stub
 		
 		String r = game.addPlant(this.plantWords);
-		if(!r.equalsIgnoreCase("ok"))view.showError(Messages.INVALID_POSITION);
+		if(!r.equalsIgnoreCase("ok"))view.showError(r);
 	}
 }

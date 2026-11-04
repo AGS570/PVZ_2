@@ -27,18 +27,16 @@ public class PlantFactory {
 		        case "sunflower":
 		        case "s":
 		        	
-		            if (game.canAfford(Utilidades.SUNFLOWER_COST) ) {
-		                return new SunFlower(game, position);
-		            }
-		            break;
+		        	return new SunFlower(game, position);
+		            
+		            
 
 		        case "peashooter":
 		        case "p":
 		        	
-		            if (game.canAfford(Utilidades.PEASHOOTER_COST) ) {
-		                return new PeaShooter(game, position);
-		            }
-		            break;
+		        	return new PeaShooter(game, position);
+		            
+		            
 		    }
 
 		    return null;
