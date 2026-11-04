@@ -63,11 +63,6 @@ public class Plant extends GameObject{
     }
 
 
-	public boolean canAfford(int sunCoins) {
-		// TODO Auto-generated method stub
-		return sunCoins >= this.cost;
-	}
-
 
 ///--------------------------------------------
 /// 
@@ -78,4 +73,16 @@ public class Plant extends GameObject{
 	public int getCost() {
 		return cost;
 	}
+
+
+public boolean isInValidPosition() {
+	// TODO Auto-generated method stub
+	return this.position.inBoard();
+}
+
+
+public boolean isInPosition(GameObject go) {
+	// TODO Auto-generated method stub
+	return go.isInPosition(position);
+}
 }

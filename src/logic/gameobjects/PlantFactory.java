@@ -55,7 +55,7 @@ public class PlantFactory {
 		  Position p = new Position(r,c);
 		  
 		  if (!p.inBoard() ) return null;
-      	  if(!game.isEmpty(p)) return null;
+      	  //if(!game.isEmpty(p)) return null;
 		  return spawnPlant(commandWords[1], game, p);
 	  }
 

@@ -64,13 +64,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		  Plant p = this.factory.parse(commandWords, this);
 		  if(p != null) {
-			  if(p.canAfford(this.sunCoins)) {
-				  this.sunCoins -= p.getCost();
+			  if(!p.isInValidPosition() || !isEmpty(p)) return Messages.INVALID_POSITION;
+			  if(canAfford(p.getCost())) {
 				  this.ObjectContainer.addObject(p);
 				  return "Ok";
 			  }else return Messages.NOT_ENOUGH_COINS;
 		  }
-		  else return Messages.INVALID_POSITION;
+		  else return Messages.INVALID_GAME_OBJECT;
 	  }
 
 	  @Override
@@ -84,6 +84,11 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		return this.ObjectContainer.isPositionEmpty(position);
 	  }
+	  
+	  public boolean isEmpty(Plant p) {
+			// TODO Auto-generated method stub
+			return this.ObjectContainer.isPositionEmpty(p);
+		  }
 
 	  @Override
 	  public boolean isInsideBoard(Position position) {
@@ -219,7 +224,12 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 
 
-	 
+	 private boolean canAfford(int cost) {
+		 if(this.sunCoins >= cost) {
+			 this.sunCoins -= cost;
+			 return true;
+		 }else return false;
+	 }
 
 	  
 }
