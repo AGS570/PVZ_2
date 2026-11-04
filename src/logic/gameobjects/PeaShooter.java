@@ -20,6 +20,12 @@ public class PeaShooter extends Plant{
 
 	 public PeaShooter() {
 	        super();
+	        this.health = 3;
+	        this.name = Messages.PEASHOOTER_NAME;
+	        this.description = Messages.PEASHOOTER_DESCRIPTION;
+	        this.icon = Messages.PEASHOOTER_ICON;
+	        this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
+	        this.cost = Utilidades.PEASHOOTER_COST;
 	    }
 
 	    @Override

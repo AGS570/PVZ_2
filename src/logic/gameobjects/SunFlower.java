@@ -25,6 +25,13 @@ public class SunFlower extends Plant{
 	
 	public SunFlower() {
 		// TODO Auto-generated constructor stub
+	    this.coolDown = 3;
+	    this.health = 1;
+	    this.name = Messages.SUNFLOWER_NAME;
+	    this.description = Messages.SUNFLOWER_DESCRIPTION;
+	    this.icon = Messages.SUNFLOWER_ICON;
+	    this.nameAndShortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
+	    this.cost = Utilidades.SUNFLOWER_COST;
 	}
 
 	@Override 

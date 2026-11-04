@@ -63,16 +63,27 @@ public class PlantFactory {
 
 	  public String list() {
 		// TODO Auto-generated method stub
+		  
 		   StringBuilder result = new StringBuilder();
 
-		    for (Plant p : AVAILABLE_PLANTS) {
-		        result.append(p.getNameAndShortcut())
+		   for(int i =0;i<AVAILABLE_PLANTS.size();i++) {
+			   Plant p = AVAILABLE_PLANTS.get(i);
+			   int damage = 0;
+			   
+			   if(p instanceof PeaShooter) {
+				   damage=1;
+			   }else {
+				   damage =0;
+			   }
+			   
+			   result.append(String.format(p.getDescription(),p.getCost(),damage,p.health));
+			   
+			   result.append(Messages.LINE_SEPARATOR);
+		   }
+		   
 
-		              .append(": ")
-		              .append(p.getDescription())
-		              .append(Messages.LINE_SEPARATOR);
-		    }
-		    return result.toString();
+		   return result.toString();
+				   
 	  }
 
 
