@@ -60,6 +60,11 @@ public class Position {
 		return this.col == 0;
 	}
 
+	public boolean isValid() {
+		// TODO Auto-generated method stub
+		return this.inBoard() ;
+	}
+
 	/*public String positionToString() {
 		// TODO Auto-generated method stub
 		return this.row + " " + this.col;

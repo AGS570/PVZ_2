@@ -26,14 +26,16 @@ public class PlantFactory {
 		    switch (plantName.toLowerCase()) {
 		        case "sunflower":
 		        case "s":
-		            if (game.canAfford(Utilidades.SUNFLOWER_COST)) {
+		        	
+		            if (game.canAfford(Utilidades.SUNFLOWER_COST) ) {
 		                return new SunFlower(game, position);
 		            }
 		            break;
 
 		        case "peashooter":
 		        case "p":
-		            if (game.canAfford(Utilidades.PEASHOOTER_COST)) {
+		        	
+		            if (game.canAfford(Utilidades.PEASHOOTER_COST) ) {
 		                return new PeaShooter(game, position);
 		            }
 		            break;
@@ -54,6 +56,8 @@ public class PlantFactory {
 		  
 		  Position p = new Position(r,c);
 		  
+		  if (!p.inBoard() ) return null;
+      	  if(!game.isEmpty(p)) return null;
 		  return spawnPlant(commandWords[1], game, p);
 	  }
 

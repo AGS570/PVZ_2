@@ -39,6 +39,8 @@ public class AddPlantCommand extends Command{
 	@Override
 	public void execute(GameModel game, GameView view) {
 		// TODO Auto-generated method stub
-		game.addPlant(this.plantWords);
+		
+		String r = game.addPlant(this.plantWords);
+		if(!r.equalsIgnoreCase("ok"))view.showError(Messages.INVALID_POSITION);
 	}
 }
