@@ -49,6 +49,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		    cycles = 0;
 		    isGameFinished = false;
 		    playerQuits = false;
+		    playerWins=false;
 		    ObjectContainer = new GameObjectContainer();
 		    this.zombieManager = new ZombieManager(this,level,rand);
 
@@ -64,7 +65,9 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		  Plant p = this.factory.parse(commandWords, this);
 		  if(p != null) {
-			  if(!p.isInValidPosition() || !isEmpty(p)) return Messages.INVALID_POSITION;
+			  if(!p.getPosition().inBoard() || !isEmpty(p.getPosition())) {
+				    return Messages.INVALID_POSITION;
+				}
 			  if(canAfford(p.getCost())) {
 				  this.ObjectContainer.addObject(p);
 				  return "Ok";
@@ -85,10 +88,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		return this.ObjectContainer.isPositionEmpty(position);
 	  }
 	  
-	  public boolean isEmpty(Plant p) {
-			// TODO Auto-generated method stub
-			return this.ObjectContainer.isPositionEmpty(p);
-		  }
+	  
 
 	  @Override
 	  public boolean isInsideBoard(Position position) {

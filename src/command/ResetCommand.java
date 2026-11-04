@@ -12,7 +12,7 @@ public class ResetCommand extends Command{
 		this.name = Messages.COMMAND_RESET_NAME;
 		this.shortcut = Messages.COMMAND_RESET_SHORTCUT;
 		this.details = Messages.COMMAND_RESET_DETAILS;
-		this.help = Messages.COMMAND_RESET_DETAILS;
+		this.help = Messages.COMMAND_RESET_HELP;
 	}
 	
 	public ResetCommand(String[] commandWords) {

@@ -47,8 +47,10 @@ public class PlantFactory {
 	  }
 	  // ...
 
+	  
+	  
 	  public Plant parse(String[] commandWords, GameWorld game) {
-		  if(commandWords == null || commandWords.length < 4) return null;
+		  if(commandWords == null || commandWords.length != 4) return null;
 		  int r = Integer.parseInt(commandWords[2]);
 		  int c = Integer.parseInt(commandWords[3]);
 		  

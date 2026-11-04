@@ -47,8 +47,10 @@ public class Controller {
 			    } else {
 			        view.showError(Messages.UNKNOWN_COMMAND);
 			    }
-			    this.game.update();
-			    this.view.showGame();
+			    if(!game.playerQuits()) {
+			    	this.game.update();
+				    this.view.showGame();
+			    }
 			}
 		if (!game.hasGameFinished()) {
 		    view.showMessage(Messages.PLAYER_QUITS);

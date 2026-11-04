@@ -5,7 +5,7 @@ import java.util.List;
 
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
-import logic.gameobjects.Plant;
+
 
 
 public class GameObjectContainer {
@@ -62,12 +62,7 @@ public class GameObjectContainer {
 		}
 		return true;
 	  }
-	  public boolean isPositionEmpty(Plant p) {
-		  for(GameObject go : gameObjects) {
-				if(p.isInPosition(go))return false;
-			}
-		  return true;
-	  }
+	  
 	  public String positionToString(Position position) {
 		// TODO Auto-generated method stub
 		  for(GameObject o: this.gameObjects) {
