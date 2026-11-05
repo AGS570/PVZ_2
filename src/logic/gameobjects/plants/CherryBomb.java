@@ -1,5 +1,7 @@
 package logic.gameobjects.plants;
 
+import action.ExplosionAction;
+import action.GameAction;
 import logic.GameWorld;
 import logic.Position;
 import logic.gameobjects.GameItem;
@@ -39,12 +41,20 @@ public class CherryBomb extends Plant{
 	        	if(timer == 1) this.icon = "C";
 	        	else if(this.timer == 0){
 	        		
-	        		this.game.doAttack(this);
+	        		this.explode();
 	        	}
 	        }
 	    }
 
-	    @Override
+	    private void explode() {
+			// TODO Auto-generated method stub
+	    	this.isAlive = false;
+	    	this.health = 0;
+	    	this.game.pushAction(new ExplosionAction(this.position,this.damage)); 
+			
+		}
+
+		@Override
 	    public boolean attack(GameItem other) {
 	        if (other == null) {
 	            return false;

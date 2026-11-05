@@ -1,5 +1,7 @@
 package logic;
 
+import action.ExplosionAction;
+import action.GameAction;
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
 
@@ -17,4 +19,5 @@ public interface GameWorld {
     void pWins();
     void zombieDied();
     void ZombiesWin();
+	void pushAction(GameAction gameAction);
 }
