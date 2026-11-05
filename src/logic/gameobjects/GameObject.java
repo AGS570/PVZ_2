@@ -9,6 +9,7 @@ public abstract class GameObject implements GameItem {
     protected GameWorld game;
     protected Position position;
     protected int health;
+    protected int damage;
     protected boolean isAlive;
 
     protected String name = "";

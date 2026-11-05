@@ -60,6 +60,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		
 	  }
 
+	  //----------------------------------
+	  //Preguntatr
 	  @Override
 	  public String addPlant(String[] commandWords) {
 		// TODO Auto-generated method stub
@@ -75,6 +77,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  }
 		  else return Messages.INVALID_GAME_OBJECT;
 	  }
+	  //------------------------------------------
 
 	  @Override
 	  public void quit() {
@@ -109,11 +112,6 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  this.zombieManager.update();
 	  }
 
-	  @Override
-	  public void getSun(int suns) {
-		// TODO Auto-generated method stub
-		this.sunCoins += suns;
-	  }
 
 	  @Override
 	  public String positionToString(Position position) {
@@ -184,14 +182,6 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 
 	  @Override
-	  public int getSuncoins() {
-		// TODO Auto-generated method stub
-		return this.sunCoins;
-	  }
-
-
-
-	  @Override
 	  public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return this.zombieManager.getRemainingZombies();
@@ -231,5 +221,35 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		 }else return false;
 	 }
 
-	  
+	 
+	 ///---------------------------------------------------
+	 /// SOLES
+	 ///------------------------------------------------------ 
+	 @Override
+	 public void getSun(int suns) {
+		 // TODO Auto-generated method stub
+		 this.sunCoins += suns;
+	 }
+
+
+	 @Override
+	 public int getGeneratedCoins() {
+		// TODO Auto-generated method stub
+		return 0;
+	 }
+
+
+
+	 @Override
+	 public int getCaughtCoins() {
+		// TODO Auto-generated method stub
+		return 0;
+	 }
+
+	 @Override
+	 public int getSuncoins() {
+		 // TODO Auto-generated method stub
+		 return this.sunCoins;
+	 }
+	///-------------------------------------------------------  
 }

@@ -14,7 +14,9 @@ public class PlantFactory {
 
 	  private static final List<Plant> AVAILABLE_PLANTS = Arrays.asList(
 	      new SunFlower(),
-	      new PeaShooter()
+	      new PeaShooter(),
+	      new WallNut(),
+	      new CherryBomb()
 	  );
 
 
@@ -68,15 +70,9 @@ public class PlantFactory {
 
 		   for(int i =0;i<AVAILABLE_PLANTS.size();i++) {
 			   Plant p = AVAILABLE_PLANTS.get(i);
-			   int damage = 0;
 			   
-			   if(p instanceof PeaShooter) {
-				   damage=1;
-			   }else {
-				   damage =0;
-			   }
 			   
-			   result.append(String.format(p.getDescription(),p.getCost(),damage,p.health));
+			   result.append(p.getDescription());
 			   
 			   result.append(Messages.LINE_SEPARATOR);
 		   }

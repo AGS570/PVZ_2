@@ -86,6 +86,7 @@ public class Messages {
 	public static final String WALL_NUT_SYMBOL = "WN";
 	public static final String WALL_NUT_NAME = "Wall-Nut";
 	public static final String WALL_NUT_NAME_SHORTCUT = "[W]all-[N]ut";
+	public static final String WALL_NUT_DESCRIPTION = "[W]all-[N]ut: cost='%d' suncoins, damage='%d', endurance='%d";
 
 	public static final String CHERRY_BOMB_SYMBOL = "c";
 	public static final String CHERRY_BOMB_NAME = "Cherry-Bomb";
@@ -179,6 +180,7 @@ public class Messages {
 	public static final String COMMAND_CATCH_HELP = "catch a sun, if possible, in position (col, row)";
 
 	public static final String NO_CATCHABLE_IN_POSITION = "No sun in (%d, %d)";
+
 
 	/**
 	 * Formats a debug message.

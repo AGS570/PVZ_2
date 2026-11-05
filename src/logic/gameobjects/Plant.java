@@ -12,6 +12,7 @@ public class Plant extends GameObject{
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		cost =0;
+		this.damage =0;
 	}
 
 	
@@ -85,4 +86,10 @@ public boolean isInPosition(GameObject go) {
 	// TODO Auto-generated method stub
 	return go.isInPosition(position);
 }
+
+@Override
+public String getDescription() {
+    return this.description.formatted(this.cost,this.damage,this.health);
+}
+
 }

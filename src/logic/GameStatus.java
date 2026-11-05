@@ -9,4 +9,12 @@ public interface GameStatus {
 
 	int getRemainingZombies();
 
+	boolean playerWins();
+
+	boolean playerQuits();
+
+	int getGeneratedCoins();
+
+	int getCaughtCoins();
+
 }

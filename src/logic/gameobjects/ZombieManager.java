@@ -60,7 +60,7 @@ public class ZombieManager {
 	 * @return a random row.
 	 */
 	private int randomZombieRow() {
-		return rand.nextInt(GameWorld.NUM_ROWS);
+		return rand.nextInt(game.NUM_ROWS);
 	}
 	
 	public boolean addZombie() {
@@ -74,12 +74,12 @@ public class ZombieManager {
 
 	public boolean addZombie(int row) {
 		boolean canAdd = getRemainingZombies() > 0 && shouldAddZombie()
-				&& isPositionEmpty(Game.NUM_COLS, row);
+				&& isPositionEmpty(game.NUM_COLS, row);
 
 		if(canAdd) {
 			// TODO fill your code
 			this.remainingZombies--;
-			Position p = new Position( row,Game.NUM_COLS-1);
+			Position p = new Position( row,game.NUM_COLS-1);
 			this.game.addZombie(new Zombie(game,p));
 		}
 		return canAdd;

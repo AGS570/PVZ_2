@@ -26,6 +26,7 @@ public class PeaShooter extends Plant{
 	        this.icon = Messages.PEASHOOTER_ICON;
 	        this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
 	        this.cost = Utilidades.PEASHOOTER_COST;
+	        this.damage = 1;
 	    }
 
 	    @Override
@@ -44,7 +45,7 @@ public class PeaShooter extends Plant{
 	        }
 
 	        if (other.isInRow(this.position)) {
-	            return other.receivePeaAttack(1);
+	            return other.receivePeaAttack(this.damage);
 	        }
 
 	        return false;

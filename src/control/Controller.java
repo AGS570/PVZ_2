@@ -24,7 +24,7 @@ public class Controller {
 
 	private final GameModel game;
 	private final GameStatus gs;
-	private final GamePrinter view;
+	private final GameView view;
 
 	public Controller(GameModel game, GameStatus gs) {
 		this.gs = gs;
