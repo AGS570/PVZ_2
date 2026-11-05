@@ -1,7 +1,7 @@
 package command;
 
 import logic.GameModel;
-import logic.GameView;
+import view.GameView;
 import view.Messages;
 
 public class ResetCommand extends Command{

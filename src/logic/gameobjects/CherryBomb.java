@@ -10,22 +10,22 @@ public class CherryBomb extends Plant{
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		this.health = 3;
-		this.name = Messages.PEASHOOTER_NAME;
-		this.description = Messages.PEASHOOTER_DESCRIPTION;
-		this.icon = Messages.PEASHOOTER_ICON;
-		this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
-		this.cost = Utilidades.PEASHOOTER_COST;
+		this.name = Messages.CHERRY_BOMB_NAME;
+		this.description = Messages.CHERRY_BOMB_DESCRIPTION;
+		this.icon = Messages.CHERRY_BOMB_SYMBOL;
+		this.nameAndShortcut = Messages.CHERRY_BOMB_NAME_SHORTCUT;
+		this.cost = Utilidades.CHERRY_BOMB_COST;
 	}
 
 	 public CherryBomb() {
 	        super();
-	        this.health = 3;
-	        this.name = Messages.PEASHOOTER_NAME;
-	        this.description = Messages.PEASHOOTER_DESCRIPTION;
-	        this.icon = Messages.PEASHOOTER_ICON;
-	        this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
+	        this.health = 2;
+	        this.name = Messages.CHERRY_BOMB_NAME;
+	        this.description = Messages.CHERRY_BOMB_DESCRIPTION;
+	        this.icon = Messages.CHERRY_BOMB_SYMBOL;
+	        this.nameAndShortcut = Messages.CHERRY_BOMB_NAME_SHORTCUT;
 	        this.cost = Utilidades.PEASHOOTER_COST;
-	        this.damage = 1;
+	        this.damage = 10;
 	    }
 
 	    @Override

@@ -71,7 +71,6 @@ public class PlantFactory {
 		   for(int i =0;i<AVAILABLE_PLANTS.size();i++) {
 			   Plant p = AVAILABLE_PLANTS.get(i);
 			   
-			   
 			   result.append(p.getDescription());
 			   
 			   result.append(Messages.LINE_SEPARATOR);
