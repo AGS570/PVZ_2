@@ -82,6 +82,19 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  }
 		  else return Messages.INVALID_GAME_OBJECT;
 	  }
+	  
+	  @Override
+	  public String addPlantCheat(String[] plantWords) {
+		  Plant p = this.plantFactory.parse(plantWords, this);
+		  if(p != null) {
+			  if(!p.getPosition().inBoard() || !isEmpty(p.getPosition())) {
+				    return Messages.INVALID_POSITION;
+				}
+				  this.ObjectContainer.addObject(p);
+				  return "Ok";
+		  }
+		  else return Messages.INVALID_GAME_OBJECT;
+	  }
 	  //------------------------------------------
 	  @Override
 	  public void addZombie(GameObject zombie) {
@@ -280,6 +293,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		// TODO Auto-generated method stub
 		return this.zombieFactory.list();
 	 }
+
+
 
 
 

@@ -83,23 +83,23 @@ public class Messages {
 	public static final String ZOMBIE_ICON = " Z[%02d]";
 	public static final String ZOMBIE_NAME_AND_SHORTCUT = "[Z]ombie";
 
-	public static final String WALL_NUT_SYMBOL = "WN";
+	public static final String WALL_NUT_SYMBOL = "WN[%02d]";
 	public static final String WALL_NUT_NAME = "Wall-Nut";
 	public static final String WALL_NUT_NAME_SHORTCUT = "[W]all-[N]ut";
 	public static final String WALL_NUT_DESCRIPTION = "[W]all-[N]ut: cost='%d' suncoins, damage='%d', endurance='%d'";
 
-	public static final String CHERRY_BOMB_SYMBOL = "c";
+	public static final String CHERRY_BOMB_SYMBOL = "c[%02d]";
 	public static final String CHERRY_BOMB_NAME = "Cherry-Bomb";
 	public static final String CHERRY_BOMB_NAME_SHORTCUT = "[C]herry-Bomb";
 	public static final String CHERRY_BOMB_DESCRIPTION = "[C]herry-Bomb: cost='%d' suncoins, damage='%d', endurance='%d'";;
 
-	public static final String BUCKET_HEAD_ZOMBIE_SYMBOL = "Bz";
+	public static final String BUCKET_HEAD_ZOMBIE_SYMBOL = "Bz[%02d]";
 	public static final String BUCKET_HEAD_ZOMBIE_NAME = "BucketHead Zombie";
 
-	public static final String SPORTY_ZOMBIE_SYMBOL = "Sz";
+	public static final String SPORTY_ZOMBIE_SYMBOL = "Sz[%02d]";
 	public static final String SPORTY_ZOMBIE_NAME = "Sporty Zombie";
 
-	public static final String EXPLOSIVE_ZOMBIE_SYMBOL = "Ez";
+	public static final String EXPLOSIVE_ZOMBIE_SYMBOL = "Ez[%02d]";
 	public static final String EXPLOSIVE_ZOMBIE_NAME = "Explosive Zombie";
 
 	public static final String SUN_SYMBOL = "*";
@@ -132,6 +132,11 @@ public class Messages {
 	public static final String COMMAND_ADD_PLANT_SHORTCUT = "a";
 	public static final String COMMAND_ADD_PLANT_DETAILS = "[a]dd <plant> <col> <row>";
 	public static final String COMMAND_ADD_PLANT_HELP = "add a plant in position (col, row)";
+	
+	public static final String COMMAND_ADD_PLANT_CHEAT_NAME = "addc";
+	public static final String COMMAND_ADD_PLANT_CHEAT_SHORTCUT = "ac";
+	public static final String COMMAND_ADD_PLANT_CHEAT_DETAILS = "[a]dd <plant> <col> <row>";
+	public static final String COMMAND_ADD_PLANT_CHEAT_HELP = "add a plant in position (col, row)";
 
 	public static final String COMMAND_ADD_ZOMBIE_NAME = "addZombie";
 	public static final String COMMAND_ADD_ZOMBIE_SHORTCUT = "az";

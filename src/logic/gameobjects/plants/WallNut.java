@@ -14,7 +14,7 @@ public class WallNut extends Plant{
 		this.description = Messages.WALL_NUT_DESCRIPTION;
 		this.icon = Messages.WALL_NUT_SYMBOL;
 		this.nameAndShortcut = Messages.WALL_NUT_NAME_SHORTCUT;
-		this.cost = Utilidades.PEASHOOTER_COST;
+		this.cost = Utilidades.WALL_NUT_COST;
 	}
 
 	 public WallNut() {

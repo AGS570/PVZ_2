@@ -31,8 +31,6 @@ public class ZombieFactory {
 			        case "bz":
 			        	
 			        	return new BucketHeadZombie(game, position);
-			            
-			            
 
 			        case "sporty":
 			        case "sz":
@@ -66,7 +64,7 @@ public class ZombieFactory {
 			  
 			  Position p = new Position(r,c);
 			  
-			  if (!p.inBoard() ) return null;
+			  //if (!p.inBoard() ) return null;
 	      	  //if(!game.isEmpty(p)) return null;
 			  return spawnZombie(commandWords[1], game, p);
 		  }
@@ -78,7 +76,7 @@ public class ZombieFactory {
 
 			   for(int i =0;i<AVAILABLE_ZOMBIES.size();i++) {
 				   Zombie p = AVAILABLE_ZOMBIES.get(i);
-				   result.append(p.getNameAndShortcut());
+				  // result.append(p.getNameAndShortcut());
 				   result.append(p.getDescription());
 				   
 				   result.append(Messages.LINE_SEPARATOR);

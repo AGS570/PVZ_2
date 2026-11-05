@@ -20,6 +20,8 @@ public class SportyZombie extends Zombie{
 	public SportyZombie() {
 		// TODO Auto-generated constructor stub
 		super();
+		this.health = 2;
+		this.fr = 1;
 		this.name = Messages.SPORTY_ZOMBIE_NAME;
 		this.description = Messages.ZOMBIE_DESCRIPTION;
 		this.icon = Messages.SPORTY_ZOMBIE_SYMBOL;

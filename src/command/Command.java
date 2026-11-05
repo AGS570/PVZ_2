@@ -10,13 +10,14 @@ public abstract class Command{
 
 	protected static final List<Command> AVAILABLE_COMMANDS = Arrays.asList(
 	      new AddPlantCommand(),
+	      new AddZombieCommand(),
+	      new AddPlantCheatCommand(),
 	      new ListPlantsCommand(),
+	      new ListZombiesCommand(),
 	      new ResetCommand(),
 	      new HelpCommand(),
 	      new ExitCommand(),
-	      new UpdateCommand(),
-	      new AddZombieCommand(),
-	      new ListZombiesCommand()
+	      new UpdateCommand()
 	 );
 	  
 	  //...

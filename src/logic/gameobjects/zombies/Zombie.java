@@ -28,7 +28,10 @@ public class Zombie extends GameObject{
 	
 	public Zombie() {
 		// TODO Auto-generated constructor stub
-
+		// TODO Auto-generated constructor stub
+		this.fr = 2;
+		this.damage =1;
+		this.health = 5;
 		this.name = Messages.ZOMBIE_NAME;
 		this.description = Messages.ZOMBIE_DESCRIPTION;
 		this.icon = Messages.ZOMBIE_ICON;
@@ -128,7 +131,7 @@ public class Zombie extends GameObject{
 
 	@Override
 	public String getDescription() {
-		return this.description.formatted(fr,damage,health);
+		return this.description.formatted(this.name,this.fr,damage,health);
 	}
 
 	@Override

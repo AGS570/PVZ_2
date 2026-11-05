@@ -43,6 +43,18 @@ public class PlantFactory {
 		        	
 		        	return new PeaShooter(game, position);
 		            
+		        case "wallnut":
+		        case "wn":
+		        	
+		        	return new WallNut(game, position);
+		            
+		            
+
+		        case "cherrybomb":
+		        case "cb":
+		        	
+		        	return new CherryBomb(game, position);
+		            
 		            
 		    }
 
@@ -63,7 +75,7 @@ public class PlantFactory {
 		  
 		  Position p = new Position(r,c);
 		  
-		  if (!p.inBoard() ) return null;
+		  //if (!p.inBoard() ) return null;
       	  //if(!game.isEmpty(p)) return null;
 		  return spawnPlant(commandWords[1], game, p);
 	  }

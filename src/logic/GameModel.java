@@ -17,6 +17,7 @@ public interface GameModel {
 	void zombieDied();
 	void ZombiesWin();
 	public String listZombies();
+	public String addPlantCheat(String[] plantWords);
 
 	
 }
