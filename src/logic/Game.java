@@ -1,7 +1,9 @@
 package logic;
 
+import java.util.Deque;
 import java.util.Random;
 
+import action.GameAction;
 import control.Level;
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
@@ -23,7 +25,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private ZombieFactory zombieFactory;
 	  private Random rand;
 	  private Level level;
-	  
+	  private Deque<GameAction> actions;
 	  private GameObjectContainer ObjectContainer;
 	  private ZombieManager zombieManager;
 	  private boolean playerWins;
@@ -144,13 +146,35 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		return this.cycles;
 	  }
 	  
-	  @Override
+	 /* @Override
 	  public void update() {
 		  this.cycles++;
-		  this.ObjectContainer.update();
+		 
 		  this.zombieManager.update();
-	  }
+	  }*/
 
+	 public void update() {
+
+		  // 1. Execute pending actions
+		  executePendingActions();
+
+		  // 2. Execute game Actions
+		  // 3. Game object updates
+		  this.ObjectContainer.update();
+
+		  // 4. & 5. Remove dead and execute pending actions
+		  boolean deadRemoved = true;
+		  deadRemoved = this.ObjectContainer.clean();
+		  while (deadRemoved || arePendingActionsLeft()) {
+		    // 4. Remove dead
+		    deadRemoved = this.ObjectContainer.clean();
+
+		    // 5. execute pending actions
+		    executePendingActions();
+		  }
+
+		  this.cycles++;
+		}
 
 	  @Override
 	  public String positionToString(Position position) {
@@ -300,4 +324,24 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 	 ///---------------------------------------
 	 
+	 
+	 
+	 ///----------------------------------------
+	 /// ACTIONS
+	 /// --------------------------------------
+	 
+	 public void pushAction(GameAction gameAction) {
+		  this.actions.addLast(gameAction);
+		}
+
+		private void executePendingActions() {
+		  while (!this.actions.isEmpty()) {
+		    GameAction action = this.actions.removeFirst();
+		    action.execute(this);
+		  }
+		}
+
+		private boolean arePendingActionsLeft() {
+		  return !this.actions.isEmpty();
+		}
 	}

@@ -19,7 +19,6 @@ public class GameObjectContainer {
 		for(GameObject go: gameObjects) {
 			go.update();
 		}
-		clean();
 	  }
 	  
 	  /*private void clean() {
@@ -33,15 +32,18 @@ public class GameObjectContainer {
 	  }*/
 	  
 	  
-	  private void clean() {
+	 public boolean clean() {
+		  boolean res = false;
 		    for (int i = 0; i < gameObjects.size(); i++) {
 		    	GameObject object = gameObjects.get(i);
 		        if (!gameObjects.get(i).isAlive()) {
 		        	object.onExit();
 		            gameObjects.remove(i);
 		            i--;
+		            res = true;
 		        }
 		    }
+		    return res;
 		}
 	  
 	  public void addObject(GameObject obj) {
