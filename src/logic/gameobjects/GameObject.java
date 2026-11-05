@@ -87,6 +87,7 @@ public abstract class GameObject implements GameItem {
     ///---------------------------------
     // Exolosion --- MAL ----- CORREGIR
     
+    /*
     
     public boolean explode(GameItem other) {
     	if(other.isInExplosionRange(other)) other.receiveAttack(this, damage);
@@ -104,5 +105,5 @@ public abstract class GameObject implements GameItem {
 		if(other.isInPosition(this.position.getRightPosition(position))) return true;
 		if(other.isInPosition(this.position.getBelowPosition(position))) return true;
 		return false;
-    }
+    }*/
 }

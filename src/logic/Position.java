@@ -66,7 +66,8 @@ public class Position {
 	}
 
 	/// -----------------------------------------------------
-	public boolean getleftPosition(Position np) {
+	
+	/*public boolean getleftPosition(Position np) {
 		// TODO Auto-generated method stub
 		this
 		return null;
@@ -100,7 +101,7 @@ public class Position {
 	public boolean getBelowPosition(Position np) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 ///--------------------------------------------------------------
 	/*public String positionToString() {
 		// TODO Auto-generated method stub

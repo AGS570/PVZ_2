@@ -6,8 +6,8 @@ import view.Messages;
 
 public class Zombie extends GameObject{
 
-	private int fr;
-	private int dmg;
+	protected int fr;
+	protected int dmg;
 	
 	
 	Zombie(GameWorld game, Position p) {
@@ -65,7 +65,7 @@ public class Zombie extends GameObject{
 		
 	}
 	
-	private boolean move(Position np) {
+	protected boolean move(Position np) {
 		if(game.isInsideBoard(np) && game.isEmpty(np)) {
 			if(this.fr == 0) {
 				this.position = np;
@@ -86,7 +86,7 @@ public class Zombie extends GameObject{
 	    game.zombieDied();
 	}	
 	
-	private void win() {
+	protected void win() {
 		if(this.position.ReachedHome())this.game.ZombiesWin();
 	}
 
