@@ -1,7 +1,8 @@
-package logic.gameobjects;
+package logic.gameobjects.plants;
 
 import logic.GameWorld;
 import logic.Position;
+import logic.gameobjects.GameItem;
 import utils.Utilidades;
 import view.Messages;
 

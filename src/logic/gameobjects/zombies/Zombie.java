@@ -1,20 +1,22 @@
-package logic.gameobjects;
+package logic.gameobjects.zombies;
 
 import logic.GameWorld;
 import logic.Position;
+import logic.gameobjects.GameItem;
+import logic.gameobjects.GameObject;
+import logic.gameobjects.plants.PeaShooter;
 import view.Messages;
 
 public class Zombie extends GameObject{
 
 	protected int fr;
-	protected int dmg;
 	
 	
-	Zombie(GameWorld game, Position p) {
+	public Zombie(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
 		this.fr = 2;
-		this.dmg =1;
+		this.damage =1;
 		this.health = 5;
 		
 		this.name = Messages.ZOMBIE_NAME;
@@ -24,6 +26,19 @@ public class Zombie extends GameObject{
 	}
 	
 	
+	public Zombie() {
+		// TODO Auto-generated constructor stub
+
+		this.name = Messages.ZOMBIE_NAME;
+		this.description = Messages.ZOMBIE_DESCRIPTION;
+		this.icon = Messages.ZOMBIE_ICON;
+		this.nameAndShortcut = Messages.ZOMBIE_NAME_AND_SHORTCUT;
+	}
+
+
+	
+
+
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
@@ -47,7 +62,7 @@ public class Zombie extends GameObject{
         Position nextPosition = this.position.newPosition();
 
         if (other.isInPosition(nextPosition)) {
-            return other.receiveAttack(this,this.dmg);
+            return other.receiveAttack(this,this.damage);
         }
 
         return false;
@@ -111,6 +126,10 @@ public class Zombie extends GameObject{
 		return false;
 	}
 
+	@Override
+	public String getDescription() {
+		return this.description.formatted(fr,damage,health);
+	}
 
 	@Override
 	public boolean receiveAttack(PeaShooter obj, int damage) {

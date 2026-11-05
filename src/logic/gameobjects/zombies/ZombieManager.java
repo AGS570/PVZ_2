@@ -1,4 +1,4 @@
-package logic.gameobjects;
+package logic.gameobjects.zombies;
 
 
 
@@ -13,7 +13,6 @@ import logic.Game;
 import logic.GameModel;
 import logic.GameWorld;
 import logic.Position;
-import logic.gameobjects.Zombie;
 
 /**
  * Manages the full lifecycle of zombies for a game session.
@@ -128,5 +127,10 @@ public class ZombieManager {
 	
 	public boolean allZombiesDead() {
 	    return deadZombies >= totalZombies;
+	}
+
+	public String list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

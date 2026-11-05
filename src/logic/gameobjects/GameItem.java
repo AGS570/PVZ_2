@@ -2,6 +2,8 @@
 package logic.gameobjects;
 
 import logic.Position;
+import logic.gameobjects.plants.PeaShooter;
+import logic.gameobjects.zombies.Zombie;
 
 public interface GameItem {
 

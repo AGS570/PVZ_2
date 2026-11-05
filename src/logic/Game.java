@@ -5,9 +5,11 @@ import java.util.Random;
 import control.Level;
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
-import logic.gameobjects.Plant;
-import logic.gameobjects.PlantFactory;
-import logic.gameobjects.ZombieManager;
+import logic.gameobjects.factory.PlantFactory;
+import logic.gameobjects.factory.ZombieFactory;
+import logic.gameobjects.plants.Plant;
+import logic.gameobjects.zombies.Zombie;
+import logic.gameobjects.zombies.ZombieManager;
 import view.Messages;
 
 public class Game implements GameStatus, GameWorld, GameModel {
@@ -17,7 +19,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private boolean playerQuits;	  
 	  private int cycles;
 	  private boolean isGameFinished;
-	  private PlantFactory factory;
+	  private PlantFactory plantFactory;
+	  private ZombieFactory zombieFactory;
 	  private Random rand;
 	  private Level level;
 	  
@@ -34,7 +37,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.isGameFinished = false;
 			this.playerQuits = false;
 			this.rand = new Random(seed);
-			this.factory = new PlantFactory();
+			this.plantFactory = new PlantFactory();
+			this.zombieFactory = new ZombieFactory();
 			this.zombieManager = new ZombieManager(this,level,rand);
 			this.playerWins = false;
 			this.level = level;
@@ -60,12 +64,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		
 	  }
 
-	  //----------------------------------
+	  ///ADDOBJECT
+	  ///----------------------------------
 	  //Preguntatr
 	  @Override
 	  public String addPlant(String[] commandWords) {
 		// TODO Auto-generated method stub
-		  Plant p = this.factory.parse(commandWords, this);
+		  Plant p = this.plantFactory.parse(commandWords, this);
 		  if(p != null) {
 			  if(!p.getPosition().inBoard() || !isEmpty(p.getPosition())) {
 				    return Messages.INVALID_POSITION;
@@ -78,6 +83,27 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  else return Messages.INVALID_GAME_OBJECT;
 	  }
 	  //------------------------------------------
+	  @Override
+	  public void addZombie(GameObject zombie) {
+		  // TODO Auto-generated method stub
+		  this.ObjectContainer.addObject(zombie);
+	  }
+	  
+	  @Override
+	  public String addZombie(String[] zombieWords) {
+		  Zombie p = this.zombieFactory.parse(zombieWords, this);
+		  if(p != null) {
+			  if(!p.getPosition().inBoard() || !isEmpty(p.getPosition())) {
+				    return Messages.INVALID_POSITION;
+				}
+				  this.ObjectContainer.addObject(p);
+				  return "Ok";
+		  }
+		  else return Messages.INVALID_GAME_OBJECT;
+	  }
+	  
+	  ///---------------------------------------------------------------
+	  
 
 	  @Override
 	  public void quit() {
@@ -138,14 +164,6 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		this.isGameFinished = true;
 	  }
 
-	  @Override
-	  public void addZombie(GameObject zombie) {
-		// TODO Auto-generated method stub
-		this.ObjectContainer.addObject(zombie);
-	  }
-
-	  
-
 
 
 	  @Override
@@ -163,13 +181,6 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  }
 
 
-
-	  @Override
-	  public String listPlants() {
-		// TODO Auto-generated method stub
-		String s = this.factory.list();
-		return s;
-	  }
 
 
 
@@ -252,4 +263,26 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		 return this.sunCoins;
 	 }
 	///-------------------------------------------------------  
-}
+
+
+	///---------------------------------------------------
+	 //LISTAR
+	 
+	 @Override
+	 public String listPlants() {
+		 // TODO Auto-generated method stub
+		 String s = this.plantFactory.list();
+		 return s;
+	 }
+
+	 @Override
+	 public String listZombies() {
+		// TODO Auto-generated method stub
+		return this.zombieFactory.list();
+	 }
+
+
+
+	 ///---------------------------------------
+	 
+	}

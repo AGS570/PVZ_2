@@ -1,4 +1,4 @@
-package logic.gameobjects;
+package logic.gameobjects.plants;
 
 import logic.GameWorld;
 import logic.Position;

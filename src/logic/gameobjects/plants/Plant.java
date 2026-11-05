@@ -1,7 +1,10 @@
-package logic.gameobjects;
+package logic.gameobjects.plants;
 
 import logic.GameWorld;
 import logic.Position;
+import logic.gameobjects.GameItem;
+import logic.gameobjects.GameObject;
+import logic.gameobjects.zombies.Zombie;
 import view.Messages;
 
 public class Plant extends GameObject{

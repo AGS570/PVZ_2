@@ -1,4 +1,4 @@
-package logic.gameobjects;
+package logic.gameobjects.factory;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +7,11 @@ import java.util.List;
 
 import logic.GameWorld;
 import logic.Position;
+import logic.gameobjects.plants.CherryBomb;
+import logic.gameobjects.plants.PeaShooter;
+import logic.gameobjects.plants.Plant;
+import logic.gameobjects.plants.SunFlower;
+import logic.gameobjects.plants.WallNut;
 import utils.Utilidades;
 import view.Messages;
 

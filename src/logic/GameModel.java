@@ -1,11 +1,12 @@
 package logic;
 
-import logic.gameobjects.Zombie;
+import logic.gameobjects.zombies.Zombie;
 
 public interface GameModel {
 	public void reset();
 	public void help();
 	public String addPlant(String[] commandWords);
+	public String addZombie(String[] zombieWords);
 	public void quit();
 	public void finishGame(boolean b);
 	public boolean hasGameFinished();
@@ -15,6 +16,7 @@ public interface GameModel {
 	public void update();
 	void zombieDied();
 	void ZombiesWin();
+	public String listZombies();
 
 	
 }
