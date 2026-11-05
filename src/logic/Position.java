@@ -65,6 +65,43 @@ public class Position {
 		return this.inBoard() ;
 	}
 
+	/// -----------------------------------------------------
+	public boolean getleftPosition(Position np) {
+		// TODO Auto-generated method stub
+		this
+		return null;
+	}
+
+	public boolean getAboveLeftPosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getAbovePosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getAboveRightPosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getBelowLeftPosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getRightPosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getBelowPosition(Position np) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+///--------------------------------------------------------------
 	/*public String positionToString() {
 		// TODO Auto-generated method stub
 		return this.row + " " + this.col;

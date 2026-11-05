@@ -6,6 +6,7 @@ import utils.Utilidades;
 import view.Messages;
 
 public class CherryBomb extends Plant{
+	private int timer;
 	public CherryBomb(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
@@ -15,6 +16,7 @@ public class CherryBomb extends Plant{
 		this.icon = Messages.CHERRY_BOMB_SYMBOL;
 		this.nameAndShortcut = Messages.CHERRY_BOMB_NAME_SHORTCUT;
 		this.cost = Utilidades.CHERRY_BOMB_COST;
+		this.timer = 3;
 	}
 
 	 public CherryBomb() {
@@ -33,7 +35,11 @@ public class CherryBomb extends Plant{
 	        this.checkHealth();
 
 	        if (this.isAlive) {
-	            this.game.doAttack(this);
+	        	if(timer == 1) this.icon = "C";
+	        	else if(this.timer == 0){
+	        		
+	        		this.game.doAttack(this);
+	        	}
 	        }
 	    }
 
@@ -44,7 +50,7 @@ public class CherryBomb extends Plant{
 	        }
 
 	        if (other.isInRow(this.position)) {
-	            return other.receivePeaAttack(this.damage);
+	            return other.receiveAttack(this,this.damage);
 	        }
 
 	        return false;

@@ -11,7 +11,13 @@ public interface GameItem {
 
     boolean attack(GameItem other);
 
-    boolean receiveZombieAttack(int damage);
+   
 
-    boolean receivePeaAttack(int damage);
+	boolean isInExplosionRange(GameItem other);
+
+	boolean receiveAttack(GameObject obj,int damage);
+
+	boolean receiveAttack(Zombie obj, int dmg);
+
+	boolean receiveAttack(PeaShooter obj, int damage);
 }

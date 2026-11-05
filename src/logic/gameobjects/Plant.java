@@ -47,22 +47,7 @@ public class Plant extends GameObject{
 		return false;
 	}
 
-    @Override
-    public boolean receiveZombieAttack(int damage) {
-        if (!this.isAlive || damage <= 0) {
-            return false;
-        }
-
-        this.health -= damage;
-        this.checkHealth();
-        return true;
-    }
-
-    @Override
-    public boolean receivePeaAttack(int damage) {
-        return false;
-    }
-
+   
 
 
 ///--------------------------------------------
@@ -90,6 +75,39 @@ public boolean isInPosition(GameObject go) {
 @Override
 public String getDescription() {
     return this.description.formatted(this.cost,this.damage,this.health);
+}
+
+
+@Override
+public boolean isInExplosionRange(GameItem other) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+@Override
+public boolean receiveAttack(GameObject obj, int damage) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+@Override
+public boolean receiveAttack(Zombie obj, int dmg) {
+	 if (!this.isAlive || damage <= 0) {
+         return false;
+     }
+
+     this.health -= damage;
+     this.checkHealth();
+     return true;
+}
+
+
+@Override
+public boolean receiveAttack(PeaShooter obj, int damage) {
+	// TODO Auto-generated method stub
+	return false;
 }
 
 }

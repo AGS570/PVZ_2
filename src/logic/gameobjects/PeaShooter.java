@@ -45,7 +45,7 @@ public class PeaShooter extends Plant{
 	        }
 
 	        if (other.isInRow(this.position)) {
-	            return other.receivePeaAttack(this.damage);
+	            return other.receiveAttack(this,this.damage);
 	        }
 
 	        return false;

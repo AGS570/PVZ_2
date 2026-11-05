@@ -75,13 +75,34 @@ public abstract class GameObject implements GameItem {
         this.isAlive = false;
     }
 
-    @Override
-    public boolean receiveZombieAttack(int damage) {
-        return false;
-    }
 
     @Override
-    public boolean receivePeaAttack(int damage) {
-        return false;
+    public boolean attack(GameItem other) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+    
+    
+    
+    ///---------------------------------
+    // Exolosion --- MAL ----- CORREGIR
+    
+    
+    public boolean explode(GameItem other) {
+    	if(other.isInExplosionRange(other)) other.receiveAttack(this, damage);
+		return isAlive;
+    }
+    
+    @Override
+    public boolean isInExplosionRange(GameItem other) {
+    	if(other.isInPosition(this.position.getleftPosition(position))) return true;
+		if(other.isInPosition(this.position.getAboveLeftPosition(position))) return true;
+		if(other.isInPosition(this.position.getAbovePosition(position))) return true;
+		if(other.isInPosition(this.position.getAboveRightPosition(position))) return true;
+		if(other.isInPosition(this.position.getleftPosition(position))) return true;
+		if(other.isInPosition(this.position.getBelowLeftPosition(position))) return true;
+		if(other.isInPosition(this.position.getRightPosition(position))) return true;
+		if(other.isInPosition(this.position.getBelowPosition(position))) return true;
+		return false;
     }
 }

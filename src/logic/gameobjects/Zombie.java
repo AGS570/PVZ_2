@@ -47,7 +47,7 @@ public class Zombie extends GameObject{
         Position nextPosition = this.position.newPosition();
 
         if (other.isInPosition(nextPosition)) {
-            return other.receiveZombieAttack(this.dmg);
+            return other.receiveAttack(this,this.dmg);
         }
 
         return false;
@@ -78,21 +78,7 @@ public class Zombie extends GameObject{
 		}else return false;
 	}
 
-    @Override
-    public boolean receiveZombieAttack(int damage) {
-        return false;
-    }
 
-    @Override
-    public boolean receivePeaAttack(int damage) {
-        if (!this.isAlive || damage <= 0) {
-            return false;
-        }
-
-        this.health -= damage;
-        this.checkHealth();
-        return true;
-    }
 	
 	@Override
 	protected void death() {
@@ -102,6 +88,39 @@ public class Zombie extends GameObject{
 	
 	private void win() {
 		if(this.position.ReachedHome())this.game.ZombiesWin();
+	}
+
+
+	@Override
+	public boolean isInExplosionRange(GameItem other) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean receiveAttack(GameObject obj, int damage) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean receiveAttack(Zombie obj, int dmg) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean receiveAttack(PeaShooter obj, int damage) {
+		 if (!this.isAlive || damage <= 0) {
+	            return false;
+	        }
+
+	        this.health -= damage;
+	        this.checkHealth();
+	        return true;
 	}
 
 	
