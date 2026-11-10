@@ -20,7 +20,7 @@ public class CherryBomb extends Plant{
 		this.icon = Messages.CHERRY_BOMB_SYMBOL;
 		this.nameAndShortcut = Messages.CHERRY_BOMB_NAME_SHORTCUT;
 		this.cost = Utilidades.CHERRY_BOMB_COST;
-		this.timer = 3;
+		this.timer = 2;
 		this.damage =10;
 	}
 

@@ -30,7 +30,7 @@ public class ExplosiveZombie extends Zombie{
 
 	@Override
 	 public void checkHealth() {
-        if (this.health <= 0) {
+        if (this.health <= 0 && this.isAlive) {
             this.death();
             this.game.pushAction(new ZombieExplosionAction(this.position,this.exDamage)); 
         }
