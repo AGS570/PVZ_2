@@ -37,7 +37,7 @@ public class CatchCommand extends Command{
 	@Override
 	public void execute(GameModel game, GameView view) {
 		// TODO Auto-generated method stub
-		game.catchSun(this.commandWords)
+		game.catchSun(this.commandWords);
 	}
 	
 }

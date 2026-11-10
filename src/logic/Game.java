@@ -34,7 +34,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private boolean zombiesWin;
 	  private SunsManager sunsManager;
 	  private int generatedSuns;
-	  private int caughtCoins;
+	  private int caughtSuns;
 	  
 	  
 	  ///------------
@@ -58,7 +58,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.actions = new ArrayDeque<GameAction>();
 			this.sunsManager = new SunsManager(null, level, rand);
 			this.generatedSuns = 0;
-			this.caughtCoins = 0;
+			this.caughtSuns = 0;
 			
 			this.lastTime = -1;
 			
@@ -298,7 +298,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	 public void getSun(int suns) {
 		 // TODO Auto-generated method stub
 		 this.sunCoins += suns;
-		 this.caughtSuns ++;
+		 this.caughtSuns++;
 	 }
 
 
@@ -313,7 +313,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	 @Override
 	 public int getCaughtCoins() {
 		// TODO Auto-generated method stub
-		return this.caughtCoins;
+		return this.caughtSuns;
 	 }
 
 	 @Override
