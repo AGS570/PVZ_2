@@ -21,6 +21,7 @@ public class CherryBomb extends Plant{
 		this.nameAndShortcut = Messages.CHERRY_BOMB_NAME_SHORTCUT;
 		this.cost = Utilidades.CHERRY_BOMB_COST;
 		this.timer = 3;
+		this.damage =10;
 	}
 
 	 public CherryBomb() {
@@ -44,7 +45,10 @@ public class CherryBomb extends Plant{
 	        		
 	        		this.explode();
 	        	}
+	        	this.timer -- ;
+	        		
 	        }
+
 	    }
 
 	    private void explode() {
@@ -52,6 +56,7 @@ public class CherryBomb extends Plant{
 	    	this.isAlive = false;
 	    	this.health = 0;
 	    	this.game.pushAction(new PlantExplosionAction(this.position,this.damage)); 
+	    	this.death();
 			
 		}
 

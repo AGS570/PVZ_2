@@ -164,6 +164,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  
 		  // 3. Game object updates
 		  this.ObjectContainer.update();
+		  this.zombieManager.update();
 
 		  // 4. & 5. Remove dead and execute pending actions
 		  boolean deadRemoved = true;

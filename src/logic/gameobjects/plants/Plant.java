@@ -96,7 +96,7 @@ public boolean receiveAttack(GameObject obj, int damage) {
 
 
 @Override
-public boolean receiveAttack(Zombie obj, int dmg) {
+public boolean receiveAttack(Zombie obj, int damage) {
 	 if (!this.isAlive || damage <= 0) {
          return false;
      }
