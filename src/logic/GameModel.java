@@ -2,6 +2,7 @@ package logic;
 
 import logic.gameobjects.zombies.Zombie;
 
+
 public interface GameModel {
 	public void reset();
 	public void help();
@@ -19,6 +20,7 @@ public interface GameModel {
 	public String listZombies();
 	public String addPlantCheat(String[] plantWords);
 	public void catchSun(String[] commandWords);
+	public void reset(String level, long seed);
 
 	
 }

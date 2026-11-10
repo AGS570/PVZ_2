@@ -35,6 +35,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private SunsManager sunsManager;
 	  private int generatedSuns;
 	  private int caughtSuns;
+	  private long seed;
 	  
 	  
 	  ///------------
@@ -59,8 +60,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.sunsManager = new SunsManager(null, level, rand);
 			this.generatedSuns = 0;
 			this.caughtSuns = 0;
-			
 			this.lastTime = -1;
+			
 			
 			
 		}
@@ -70,15 +71,33 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 	  @Override
 	  public void reset() {
-		    sunCoins = INITIAL_COINS;
-		    cycles = 0;
-		    isGameFinished = false;
-		    playerQuits = false;
-		    playerWins=false;
-		    ObjectContainer = new GameObjectContainer();
-		    this.zombieManager = new ZombieManager(this,level,rand);
+		    reset(this.level.name(),this.seed);
 
 		}
+	  public void reset(String level, long seed) {
+		// TODO Auto-generated method stub
+		  
+		Level newLevel = Level.valueOfIgnoreCase(level);
+		
+		this.level=newLevel;
+		this.seed=seed; 
+		this.rand=new Random(seed);
+		this.sunCoins=INITIAL_COINS;
+		this.cycles=0;
+		this.isGameFinished = false;
+	    this.playerQuits = false;
+	    this.playerWins = false;
+	    this.zombiesWin = false;
+	    this.ObjectContainer=new GameObjectContainer();
+	    this.actions=new ArrayDeque<GameAction>();
+	    this.zombieManager=new ZombieManager(this,this.level,this.rand);
+	    this.generatedSuns = 0;
+	    this.caughtSuns = 0;
+
+	    this.lastTime = -1;
+	    
+		  
+	}
 	  @Override
 	  public void help() {
 		// TODO Auto-generated method stub
