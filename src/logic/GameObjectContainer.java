@@ -72,6 +72,27 @@ public class GameObjectContainer {
 			}
 			return " ";
 	  }
+	
+	  public void receiveDamage(Position nPos, int damage) {
+		// TODO Auto-generated method stub
+		for(GameObject o: this.gameObjects) {
+			if(o.isInPosition(nPos))o.receiveDamage(damage);
+		}
+	}
+	  
+	  public void receivePlantDamage(Position nPos, int damage) {
+			// TODO Auto-generated method stub
+			for(GameObject o: this.gameObjects) {
+				if(o.isInPosition(nPos))o.receivePlantDamage(damage);
+			}
+		}
+	  
+	  public void receiveZombieDamage(Position nPos, int damage) {
+			// TODO Auto-generated method stub
+			for(GameObject o: this.gameObjects) {
+				if(o.isInPosition(nPos))o.receiveZombieDamage(damage);
+			}
+		}
 	  
 	  
 	//...

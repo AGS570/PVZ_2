@@ -50,7 +50,7 @@ public class Plant extends GameObject{
 		return false;
 	}
 
-   
+	
 
 
 ///--------------------------------------------
@@ -113,4 +113,10 @@ public boolean receiveAttack(PeaShooter obj, int damage) {
 	return false;
 }
 
+@Override
+public boolean receiveZombieDamage(int damage) {
+	this.health -= damage;
+	this.checkHealth();
+	return true;
+}
 }

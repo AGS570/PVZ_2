@@ -145,6 +145,12 @@ public class Zombie extends GameObject{
 	        return true;
 	}
 
+	@Override
+	public boolean receivePlantDamage(int damage) {
+		this.health -= damage;
+    	this.checkHealth();
+    	return true;
+    }
 	
 
 }

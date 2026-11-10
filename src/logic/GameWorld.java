@@ -20,4 +20,7 @@ public interface GameWorld {
     void zombieDied();
     void ZombiesWin();
 	void pushAction(GameAction gameAction);
+	void ReceiveDamage(Position nPos, int damage);
+	void ReceivePlantDamage(Position nPos, int damage);
+	void ReceiveZombieDamage(Position nPos, int damage);
 }

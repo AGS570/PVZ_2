@@ -1,5 +1,6 @@
 package logic;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Random;
 
@@ -44,6 +45,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.zombieManager = new ZombieManager(this,level,rand);
 			this.playerWins = false;
 			this.level = level;
+			this.actions = new ArrayDeque<GameAction>();
 		}
 	  //...
 
@@ -345,5 +347,29 @@ public class Game implements GameStatus, GameWorld, GameModel {
 
 		private boolean arePendingActionsLeft() {
 		  return !this.actions.isEmpty();
+		}
+
+
+
+		@Override
+		public void ReceiveDamage(Position nPos, int damage) {
+			// TODO Auto-generated method stub
+			this.ObjectContainer.receiveDamage(nPos,damage);
+		}
+
+
+
+		@Override
+		public void ReceivePlantDamage(Position nPos, int damage) {
+			// TODO Auto-generated method stub
+			this.ObjectContainer.receivePlantDamage(nPos, damage);
+		}
+
+
+
+		@Override
+		public void ReceiveZombieDamage(Position nPos, int damage) {
+			// TODO Auto-generated method stub
+			this.ObjectContainer.receiveZombieDamage(nPos, damage);
 		}
 	}

@@ -51,7 +51,7 @@ public class PlantFactory {
 		            
 
 		        case "cherrybomb":
-		        case "cb":
+		        case "c":
 		        	
 		        	return new CherryBomb(game, position);
 		            

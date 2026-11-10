@@ -2,6 +2,7 @@ package logic.gameobjects.plants;
 
 import action.ExplosionAction;
 import action.GameAction;
+import action.PlantExplosionAction;
 import logic.GameWorld;
 import logic.Position;
 import logic.gameobjects.GameItem;
@@ -50,7 +51,7 @@ public class CherryBomb extends Plant{
 			// TODO Auto-generated method stub
 	    	this.isAlive = false;
 	    	this.health = 0;
-	    	this.game.pushAction(new ExplosionAction(this.position,this.damage)); 
+	    	this.game.pushAction(new PlantExplosionAction(this.position,this.damage)); 
 			
 		}
 

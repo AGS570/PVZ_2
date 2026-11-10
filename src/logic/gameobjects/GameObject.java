@@ -82,6 +82,20 @@ public abstract class GameObject implements GameItem {
 		return false;
 	}
     
+    public boolean receiveDamage(int damage) {
+    	this.health -= damage;
+    	this.checkHealth();
+    	return true;
+    }
+    
+    public boolean receiveZombieDamage(int damage) {
+    	return false;
+    }
+    
+    public boolean receivePlantDamage(int damage) {
+    	return false;
+    }
+    
     
     
     ///---------------------------------
