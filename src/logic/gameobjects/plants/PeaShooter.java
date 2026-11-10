@@ -17,6 +17,7 @@ public class PeaShooter extends Plant{
 		this.icon = Messages.PEASHOOTER_ICON;
 		this.nameAndShortcut = Messages.PEASHOOTER_NAME_AND_SHORTCUT;
 		this.cost = Utilidades.PEASHOOTER_COST;
+		this.damage =1;
 	}
 
 	 public PeaShooter() {

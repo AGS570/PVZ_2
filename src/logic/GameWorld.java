@@ -4,6 +4,7 @@ import action.ExplosionAction;
 import action.GameAction;
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
+import logic.gameobjects.suns.Sun;
 
 public interface GameWorld {
 
@@ -23,4 +24,6 @@ public interface GameWorld {
 	void ReceiveDamage(Position nPos, int damage);
 	void ReceivePlantDamage(Position nPos, int damage);
 	void ReceiveZombieDamage(Position nPos, int damage);
+	void addSun(GameObject go);
+	void addSun();
 }

@@ -46,7 +46,7 @@ public class SunFlower extends Plant{
 
 	private void getSun(int suns) {
 		// TODO Auto-generated method stub
-		this.game.getSun(suns);
+		this.game.addSun();
 	}
 	
 	

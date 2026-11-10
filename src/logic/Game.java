@@ -11,6 +11,7 @@ import logic.gameobjects.GameObject;
 import logic.gameobjects.factory.PlantFactory;
 import logic.gameobjects.factory.ZombieFactory;
 import logic.gameobjects.plants.Plant;
+import logic.gameobjects.suns.SunsManager;
 import logic.gameobjects.zombies.Zombie;
 import logic.gameobjects.zombies.ZombieManager;
 import view.Messages;
@@ -31,6 +32,15 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	  private ZombieManager zombieManager;
 	  private boolean playerWins;
 	  private boolean zombiesWin;
+	  private SunsManager sunsManager;
+	  private int generatedSuns;
+	  private int caughtCoins;
+	  
+	  
+	  ///------------
+	  ///Revisar
+	  private int lastTime;
+	  //----------------
 		
 	  public Game(long seed, control.Level level) {
 			// TODO Auto-generated constructor stub
@@ -46,6 +56,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.playerWins = false;
 			this.level = level;
 			this.actions = new ArrayDeque<GameAction>();
+			this.sunsManager = new SunsManager(null, level, rand);
+			this.generatedSuns = 0;
+			this.caughtCoins = 0;
+			
+			this.lastTime = -1;
+			
+			
 		}
 	  //...
 
@@ -281,13 +298,14 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	 public void getSun(int suns) {
 		 // TODO Auto-generated method stub
 		 this.sunCoins += suns;
+		 this.caughtSuns ++;
 	 }
 
 
 	 @Override
 	 public int getGeneratedCoins() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.generatedSuns;
 	 }
 
 
@@ -295,13 +313,33 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	 @Override
 	 public int getCaughtCoins() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.caughtCoins;
 	 }
 
 	 @Override
 	 public int getSuncoins() {
 		 // TODO Auto-generated method stub
 		 return this.sunCoins;
+	 }
+	 @Override
+	 public void catchSun(String[] commandWords) {
+		 // TODO Auto-generated method stub
+		 if(this.cycles != this.lastTime) {
+			 
+		 }
+	 }
+	 
+	 @Override
+	 public void addSun(GameObject go) {
+		 // TODO Auto-generated method stub
+		 this.ObjectContainer.addObject(go);
+	 }
+	 
+	 
+	 @Override
+	 public void addSun() {
+		 // TODO Auto-generated method stub
+		 this.sunsManager.addSun();
 	 }
 	///-------------------------------------------------------  
 
@@ -373,4 +411,13 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			// TODO Auto-generated method stub
 			this.ObjectContainer.receiveZombieDamage(nPos, damage);
 		}
+
+
+
+
+
+
+
+
+
 	}
