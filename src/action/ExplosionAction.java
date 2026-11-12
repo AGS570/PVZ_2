@@ -22,14 +22,12 @@ public class ExplosionAction implements GameAction{
 	}
 
 	protected void attackExplosionRange(GameWorld game, Position pos) {
+		Position nPos;
 	    for (int i = -1; i <= 1; i++) {
 	        for (int j = -1; j <= 1; j++) {
 
 	            if (i != 0 || j != 0) {
-	                Position nPos = new Position(
-	                    this.p.getRow() + i,
-	                    this.p.getCol() + j
-	                );
+	                 nPos = pos.targetPosition(i, j);
 
 	                if (nPos.isValid()) {
 	                    this.doDamage(game,nPos);

@@ -20,7 +20,7 @@ public class ResetCommand extends Command{
 	}
 	
     public ResetCommand(String level, long seed) {
-        this();
+        super();
         this.level = level;
         this.seed = seed;
         this.tieneParametros = true;

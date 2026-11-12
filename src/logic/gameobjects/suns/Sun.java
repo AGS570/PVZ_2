@@ -26,6 +26,14 @@ public class Sun extends GameObject{
 		
 	}
 
+	public Sun(GameWorld game, Position np, int sc) {
+		super(game,np);
+		// TODO Auto-generated constructor stub
+		timer = 11;
+		this.sunCoins = sc;
+		
+	}
+	
 	@Override
 	public boolean isInExplosionRange(GameItem other) {
 		// TODO Auto-generated method stub
@@ -55,6 +63,7 @@ public class Sun extends GameObject{
 		// TODO Auto-generated method stub
 		if(this.timer == 0) {
 			this.death();
+			this.getSuns();
 		}
 	}
 

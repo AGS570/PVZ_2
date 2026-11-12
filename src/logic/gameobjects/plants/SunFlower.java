@@ -33,18 +33,19 @@ public class SunFlower extends Plant{
 	    this.nameAndShortcut = Messages.SUNFLOWER_NAME_AND_SHORTCUT;
 	    this.cost = Utilidades.SUNFLOWER_COST;
 	}
+	
 
 	@Override 
 	public void update() {
 		this.checkHealth();
 		if (this.coolDown <= 0 && this.isAlive) {
 			
-			this.getSun(SOLES);
+			this.getSun();
 			this.coolDown = 3;
 		}else this.coolDown--;
 	}
 
-	private void getSun(int suns) {
+	private void getSun() {
 		// TODO Auto-generated method stub
 		this.game.addSun();
 	}

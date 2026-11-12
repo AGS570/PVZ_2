@@ -65,6 +65,10 @@ public class Position {
 		return this.inBoard() ;
 	}
 
+	public Position targetPosition(int r, int c) {
+		Position pos = new Position(this.row + r,this.col + c);
+		return pos;
+	}
 	/// -----------------------------------------------------
 	
 	/*public boolean getleftPosition(Position np) {
