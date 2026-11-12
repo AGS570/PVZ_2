@@ -341,10 +341,11 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		 return this.sunCoins;
 	 }
 	 @Override
-	 public void catchSun(String[] commandWords) {
+	 public void catchSun(int r, int c) {
 		 // TODO Auto-generated method stub
-		 if(this.cycles != this.lastTime) {
-			 
+		 Position nPos = new Position(r,c);
+		 if(this.cycles != this.lastTime ) {
+			this.ObjectContainer.catchSuns(nPos);
 		 }
 	 }
 	 

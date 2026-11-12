@@ -19,8 +19,8 @@ public interface GameModel {
 	void ZombiesWin();
 	public String listZombies();
 	public String addPlantCheat(String[] plantWords);
-	public void catchSun(String[] commandWords);
 	public void reset(String level, long seed);
+	public void catchSun(int r, int c);
 
 	
 }

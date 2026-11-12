@@ -64,7 +64,7 @@ public class Sun extends GameObject{
 		if(this.timer == 0) {
 			this.death();
 			this.getSuns();
-		}
+		}else timer--;
 	}
 
 	@Override
