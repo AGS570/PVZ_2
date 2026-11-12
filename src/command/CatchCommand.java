@@ -9,7 +9,7 @@ public class CatchCommand extends Command{
 	private String[] commandWords;
 	public CatchCommand() {
 		this.name = Messages.COMMAND_CATCH_NAME;
-		this.shortcut = Messages.COMMAND_ADD_PLANT_CHEAT_SHORTCUT;
+		this.shortcut = Messages.COMMAND_CATCH_SHORTCUT;
 		this.details = Messages.COMMAND_CATCH_DETAILS;
 		this.help = Messages.COMMAND_CATCH_HELP;
 	}

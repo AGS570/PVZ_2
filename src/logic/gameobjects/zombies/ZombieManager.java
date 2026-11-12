@@ -13,6 +13,7 @@ import logic.Game;
 import logic.GameModel;
 import logic.GameWorld;
 import logic.Position;
+import logic.gameobjects.GameObject;
 
 /**
  * Manages the full lifecycle of zombies for a game session.
@@ -79,7 +80,7 @@ public class ZombieManager {
 			// TODO fill your code
 			this.remainingZombies--;
 			Position p = new Position( row,game.NUM_COLS-1);
-			this.game.addZombie(new Zombie(game,p));
+			this.game.addZombie(this.spawnRandomTypeZombie(p));
 		}
 		return canAdd;
 	}
@@ -89,6 +90,22 @@ public class ZombieManager {
 	
 	
 
+
+	private GameObject spawnRandomTypeZombie(Position p) {
+		// TODO Auto-generated method stub
+		int r = rand.nextInt(100);
+		
+		if( 0 <= r && r<= 54) {
+			return(new Zombie(this.game,p));
+		}else if ( 55 <= r && r < 70){
+			return(new BucketHeadZombie(this.game,p));
+		}else if ( 70<= r && r < 85){
+			return(new SportyZombie(this.game,p));
+		}else {
+			return new ExplosiveZombie(this.game,p);
+		}
+		
+	}
 
 	private boolean isPositionEmpty(int numCols, int row) {
 		// TODO Auto-generated method stub

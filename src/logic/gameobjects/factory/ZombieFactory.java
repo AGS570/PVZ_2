@@ -50,7 +50,7 @@ public class ZombieFactory {
 			    return null;
 			}
 
-		  public static List<Zombie> getAvailablePlants() {
+		  public static List<Zombie> getAvailableZombies() {
 		    return Collections.unmodifiableList(AVAILABLE_ZOMBIES);
 		  }
 		  // ...
