@@ -355,6 +355,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	 public void addSun(GameObject go) {
 		 // TODO Auto-generated method stub
 		 this.ObjectContainer.addObject(go);
+		 this.generatedSuns++;
 	 }
 	 
 	 

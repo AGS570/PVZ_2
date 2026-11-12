@@ -102,7 +102,9 @@ public class Messages {
 	public static final String EXPLOSIVE_ZOMBIE_SYMBOL = "Ez[%02d]";
 	public static final String EXPLOSIVE_ZOMBIE_NAME = "Explosive Zombie";
 
-	public static final String SUN_SYMBOL = "*";
+	public static final String SUN_SYMBOL = "*[%02d]";
+	
+
 	public static final String SUN_DESCRIPTION = "Sun";
 
 	public static final String NOT_ENOUGH_COINS = "Not enough suncoins";

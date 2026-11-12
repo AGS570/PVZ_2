@@ -6,6 +6,7 @@ import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
 import logic.gameobjects.plants.PeaShooter;
 import logic.gameobjects.zombies.Zombie;
+import view.Messages;
 
 public class Sun extends GameObject{
 
@@ -14,15 +15,20 @@ public class Sun extends GameObject{
 	private int sunCoins;
 	
 	public Sun() {
-		timer = 11;
+		timer = 10;
 		this.sunCoins = 10;
+		this.icon=Messages.SUN_SYMBOL;
+		this.description= Messages.SUN_DESCRIPTION;
 	}
 	
 	public Sun(GameWorld game, Position np) {
+
 		super(game,np);
 		// TODO Auto-generated constructor stub
-		timer = 11;
+		timer = 10;
 		this.sunCoins = 10;
+		this.icon=Messages.SUN_SYMBOL;
+		this.description= Messages.SUN_DESCRIPTION;
 		
 	}
 
@@ -63,7 +69,6 @@ public class Sun extends GameObject{
 		// TODO Auto-generated method stub
 		if(this.timer == 0) {
 			this.death();
-			this.getSuns();
 		}else timer--;
 	}
 
@@ -81,8 +86,19 @@ public class Sun extends GameObject{
 	
 	@Override
 	public boolean getSuns() {
+		this.death();
 		this.game.getSun(sunCoins);
+		
     	return true;
     }
 
+	@Override
+	public String getIcon() {
+        return this.icon.formatted(this.timer);
+    }
+
+	@Override
+	public boolean blocksMovement() {
+	    return false;
+	}
 }

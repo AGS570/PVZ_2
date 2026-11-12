@@ -38,7 +38,7 @@ public class CatchCommand extends Command{
 	public void execute(GameModel game, GameView view) {
 
 		// TODO Auto-generated method stub
-		game.catchSun(Integer.parseInt(commandWords[2]),Integer.parseInt(commandWords[3]));
+		game.catchSun(Integer.parseInt(commandWords[1]),Integer.parseInt(commandWords[2]));
 	}
 	
 }

@@ -14,13 +14,19 @@ public class GameObjectContainer {
 	  public GameObjectContainer() {
 	    gameObjects = new ArrayList<>();
 	  }
+	  /*
 	  public void update() {
 		// TODO Auto-generated method stub
 		for(GameObject go: gameObjects) {
 			go.update();
 		}
 	  }
-	  
+	  */
+	  public void update() {
+		    for (GameObject go : new ArrayList<>(gameObjects)) {
+		        go.update();
+		    }
+		}
 	  /*private void clean() {
 		// TODO Auto-generated method stub
 		  for(GameObject go: gameObjects) {
@@ -60,18 +66,25 @@ public class GameObjectContainer {
 	  public boolean isPositionEmpty(Position position) {
 		// TODO Auto-generated method stub
 		for(GameObject go : gameObjects) {
-			if(go.isInPosition(position))return false;
+			if(go.isInPosition(position)&& go.blocksMovement())return false;
 		}
 		return true;
 	  }
 	  
 	  public String positionToString(Position position) {
-		// TODO Auto-generated method stub
-		  for(GameObject o: this.gameObjects) {
-				if(o.isInPosition(position))return o.getIcon();
-			}
-			return " ";
-	  }
+		    StringBuilder result = new StringBuilder();
+
+		    for (GameObject o : this.gameObjects) {
+		        if (o.isInPosition(position)) {
+		            if (result.length() > 0) {
+		                result.append(" ");
+		            }
+		            result.append(o.getIcon());
+		        }
+		    }
+
+		    return result.length() > 0 ? result.toString() : " ";
+		}
 	
 	  public void receiveDamage(Position nPos, int damage) {
 		// TODO Auto-generated method stub

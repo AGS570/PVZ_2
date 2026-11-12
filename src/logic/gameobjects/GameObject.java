@@ -100,6 +100,9 @@ public abstract class GameObject implements GameItem {
     	return false;
     }
     
+    public boolean blocksMovement() {
+        return true;
+    }
     
     ///---------------------------------
     // Exolosion --- MAL ----- CORREGIR
