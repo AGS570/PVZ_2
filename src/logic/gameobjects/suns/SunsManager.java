@@ -68,7 +68,7 @@ public class SunsManager {
 	public boolean addSun() {
 		
 		Position np = null;
-		while(!np.inBoard() || np == null) {
+		while(np == null ||!np.inBoard() ) {
 			
 			int row = randomSunRow();
 			int col = randomSunCol();
