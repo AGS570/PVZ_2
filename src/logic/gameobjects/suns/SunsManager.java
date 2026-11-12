@@ -68,16 +68,14 @@ public class SunsManager {
 	public boolean addSun() {
 		
 		Position np = null;
-		if(this.remainingZombies > 0) {
-			while(!np.inBoard() || np == null) {
-				
-				int row = randomSunRow();
-				int col = randomSunCol();
-				np = new Position(row,col);
-			}
+		while(!np.inBoard() || np == null) {
 			
-			return addSun(np);
-		}else return false;
+			int row = randomSunRow();
+			int col = randomSunCol();
+			np = new Position(row,col);
+		}
+		
+		return addSun(np);
 	}
 
 	public boolean addSun(Position np) {

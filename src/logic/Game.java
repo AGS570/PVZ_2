@@ -57,7 +57,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 			this.playerWins = false;
 			this.level = level;
 			this.actions = new ArrayDeque<GameAction>();
-			this.sunsManager = new SunsManager(null, level, rand);
+			this.sunsManager = new SunsManager(this, level, rand);
 			this.generatedSuns = 0;
 			this.caughtSuns = 0;
 			this.lastTime = -1;
@@ -91,6 +91,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 	    this.ObjectContainer=new GameObjectContainer();
 	    this.actions=new ArrayDeque<GameAction>();
 	    this.zombieManager=new ZombieManager(this,this.level,this.rand);
+	    this.sunsManager = new SunsManager(this, this.level, rand);
 	    this.generatedSuns = 0;
 	    this.caughtSuns = 0;
 
@@ -201,6 +202,7 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		  // 3. Game object updates
 		  this.ObjectContainer.update();
 		  this.zombieManager.update();
+		  this.sunsManager.update();
 
 		  // 4. & 5. Remove dead and execute pending actions
 		  boolean deadRemoved = true;
