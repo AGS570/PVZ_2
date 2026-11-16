@@ -40,5 +40,9 @@ public class CatchCommand extends Command{
 		// TODO Auto-generated method stub
 		game.catchSun(Integer.parseInt(commandWords[1]),Integer.parseInt(commandWords[2]));
 	}
+	@Override
+	public boolean isCycleCommand() {
+	    return false;
+	}
 	
 }

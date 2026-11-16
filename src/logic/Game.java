@@ -348,6 +348,8 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		 Position nPos = new Position(r,c);
 		 if(this.cycles != this.lastTime ) {
 			this.ObjectContainer.catchSuns(nPos);
+			this.ObjectContainer.clean();
+			this.lastTime = this.cycles;
 		 }
 	 }
 	 

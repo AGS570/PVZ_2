@@ -67,6 +67,7 @@ public abstract class GameObject implements GameItem {
 
     public void checkHealth() {
         if (this.health <= 0) {
+        	this.health=0;
             this.death();
         }
     }

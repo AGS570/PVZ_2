@@ -53,6 +53,9 @@ public abstract class Command{
 		// TODO Auto-generated method stub
 		return help;
 	  }
+	  public boolean isCycleCommand() {
+		    return true;
+		}
 
 	  
 	  

@@ -44,11 +44,14 @@ public class Controller {
 			    if (command != null) {
 			        // 3-4. Game Action & Update. Draw if required
 			        command.execute(game, view);
+			        if(command.isCycleCommand()) {
+			        	this.game.update();
+			        }
 			    } else {
 			        view.showError(Messages.UNKNOWN_COMMAND);
 			    }
 			    if(!game.playerQuits()) {
-			    	this.game.update();
+			    	//this.game.update();
 				    this.view.showGame();
 			    }
 			}
