@@ -50,6 +50,10 @@ public abstract class GameObject implements GameItem {
     public String getDescription() {
         return this.description;
     }
+    
+    public String getSymbol() {
+    	return this.icon;
+    }
 
     public String getNameAndShortcut() {
         return this.nameAndShortcut;

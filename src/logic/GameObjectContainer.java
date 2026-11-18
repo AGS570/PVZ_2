@@ -5,6 +5,7 @@ import java.util.List;
 
 import logic.gameobjects.GameItem;
 import logic.gameobjects.GameObject;
+import view.Messages;
 
 
 
@@ -75,7 +76,7 @@ public class GameObjectContainer {
 		    StringBuilder result = new StringBuilder();
 
 		    for (GameObject o : this.gameObjects) {
-		        if (o.isInPosition(position)) {
+		        if (o.isInPosition(position)&& result.indexOf(String.valueOf( o.getIcon().charAt(0)))==-1) {
 		            if (result.length() > 0) {
 		                result.append(" ");
 		            }
