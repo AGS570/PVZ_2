@@ -343,14 +343,22 @@ public class Game implements GameStatus, GameWorld, GameModel {
 		 return this.sunCoins;
 	 }
 	 @Override
-	 public void catchSun(int r, int c) {
-		 // TODO Auto-generated method stub
-		 Position nPos = new Position(r,c);
-		 if(this.cycles != this.lastTime ) {
-			this.ObjectContainer.catchSuns(nPos);
-			this.ObjectContainer.clean();
-			this.lastTime = this.cycles;
-		 }
+	 public String catchSun(int r, int c) {
+	     if (this.cycles == this.lastTime) {
+	         return "Ok"; 
+	     }
+
+	     Position nPos = new Position(r, c);
+	     boolean caught = this.ObjectContainer.catchSuns(nPos);
+	     this.ObjectContainer.clean();
+
+	     if (!caught) {
+	         return Messages.NO_CATCHABLE_IN_POSITION.formatted(r, c);
+	         
+	     }
+
+	     this.lastTime = this.cycles; 
+	     return "Ok";
 	 }
 	 
 	 @Override

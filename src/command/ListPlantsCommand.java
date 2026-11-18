@@ -30,5 +30,9 @@ public class ListPlantsCommand extends Command{
 		// TODO Auto-generated method stub
 		view.showMessage(game.listPlants());
 	}
+	@Override
+	public boolean isCycleCommand() {
+	    return false;
+	}
 
 }

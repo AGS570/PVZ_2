@@ -106,12 +106,17 @@ public class GameObjectContainer {
 				if(o.isInPosition(nPos))o.receiveZombieDamage(damage);
 			}
 		}
-	public void catchSuns(Position nPos) {
-		// TODO Auto-generated method stub
-		for(GameObject o: this.gameObjects) {
-			if(o.isInPosition(nPos))o.getSuns();
+	  public boolean catchSuns(Position nPos) {
+		    boolean caught = false;
+		    for (GameObject o : this.gameObjects) {
+		        if (o.isInPosition(nPos)) {
+		            if (o.getSuns()) {
+		                caught = true;
+		            }
+		        }
+		    }
+		    return caught;
 		}
-	}
 	  
 	  
 	//...

@@ -36,9 +36,13 @@ public class CatchCommand extends Command{
 
 	@Override
 	public void execute(GameModel game, GameView view) {
+	    int col = Integer.parseInt(commandWords[1]);
+	    int row = Integer.parseInt(commandWords[2]);
 
-		// TODO Auto-generated method stub
-		game.catchSun(Integer.parseInt(commandWords[1]),Integer.parseInt(commandWords[2]));
+	    String result = game.catchSun(col, row);
+	    if (!result.equalsIgnoreCase("ok")) {
+	        view.showError(result);
+	    }
 	}
 	@Override
 	public boolean isCycleCommand() {

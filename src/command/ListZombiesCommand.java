@@ -30,5 +30,9 @@ public class ListZombiesCommand extends Command{
 		// TODO Auto-generated method stub
 		view.showMessage(game.listZombies());
 	}
+	@Override
+	public boolean isCycleCommand() {
+	    return false;
+	}
 
 }

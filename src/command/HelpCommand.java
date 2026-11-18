@@ -42,5 +42,9 @@ public class HelpCommand extends Command {
 
 	    view.showMessage(result.toString());
 	}
+	@Override
+	public boolean isCycleCommand() {
+	    return false;
+	}
 	
 	}

@@ -63,4 +63,8 @@ public class ResetCommand extends Command{
 		}
 		
 	}
+	@Override
+	public boolean isCycleCommand() {
+	    return false;
+	}
 }

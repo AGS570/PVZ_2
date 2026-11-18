@@ -20,7 +20,6 @@ public interface GameModel {
 	public String listZombies();
 	public String addPlantCheat(String[] plantWords);
 	public void reset(String level, long seed);
-	public void catchSun(int r, int c);
-
+	public String catchSun(int r, int c);
 	
 }
