@@ -9,7 +9,7 @@ public class WallNut extends Plant{
 	public WallNut(GameWorld game, Position p) {
 		super(game, p);
 		// TODO Auto-generated constructor stub
-		this.health = 8;
+		this.health = 10;
 		this.name = Messages.WALL_NUT_NAME;
 		this.description = Messages.WALL_NUT_DESCRIPTION;
 		this.icon = Messages.WALL_NUT_SYMBOL;
